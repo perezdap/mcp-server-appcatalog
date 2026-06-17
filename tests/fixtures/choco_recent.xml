@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://community.chocolatey.org/api/v2/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Packages</title>
+  <id>http://community.chocolatey.org/api/v2/Packages</id>
+  <updated>2026-06-17T21:09:35Z</updated>
+  <link rel="self" title="Packages" href="Packages" />
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='maven-snapshot',Version='20260616.203347.0')</id>
+    <title type="text">maven-snapshot</title>
+    <summary type="text">This package installs the latest snapshot Maven distribution.</summary>
+    <updated>2026-06-17T21:01:03Z</updated>
+    <author>
+      <name>The Apache Maven team</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='maven-snapshot',Version='20260616.203347.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='maven-snapshot',Version='20260616.203347.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/maven-snapshot/20260616.203347.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>20260616.203347.0</d:Version>
+      <d:Title>Latest Apache Maven snapshot</d:Title>
+      <d:Description>This package installs the latest deployed Maven snapshot distribution from Apache's Nexus server.
+	
+*Take care that these builds can be unstable!*
+	
+## Switching between existing Maven and Snapshot
+This package will be installed next to an existing Maven installation. By uninstalling this package you will switch back to that Maven installation.
+
+## Example
+
+```
+&gt; mvn -v
+Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
+...
+&gt; choco install maven-snapshot -y
+&gt; refreshenv
+&gt; mvn -v
+Apache Maven 4.0.0-alpha-1-SNAPSHOT (bb916d0784c7631866167928e4d0615df3317567)
+...
+&gt; choco uninstall maven-snapshot -y
+&gt; refreshenv
+&gt; mvn -v
+Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
+...
+```
+	  
+Have fun and reach out if you have any issues.</d:Description>
+      <d:Tags>apache maven maven-snapshot latest-maven maven-dev-build</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-06-16T20:56:09.627</d:Created>
+      <d:Dependencies></d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">86801</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">16</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/maven-snapshot/20260616.203347.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/maven-snapshot/20260616.203347.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://upload.wikimedia.org/wikipedia/commons/5/52/Apache_Maven_logo.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-06-16T20:56:09.627</d:Published>
+      <d:LicenseUrl>https://github.com/apache/maven/blob/master/LICENSE</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>o4t/lkZ6UiAU/DH5RRLIZfGrL9KeqeXitc7ULfBCZNHybKfhliiRscv30mKLFPlB5dwL+nFhySQc4WeJDK+y+w==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4522</d:PackageSize>
+      <d:ProjectUrl>https://maven.apache.org/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl>https://github.com/apache/maven</d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/MartinKanters/ChocolateyPackages</d:PackageSourceUrl>
+      <d:DocsUrl>https://maven.apache.org/</d:DocsUrl>
+      <d:MailingListUrl>https://maven.apache.org/mailing-lists.html</d:MailingListUrl>
+      <d:BugTrackerUrl>https://issues.apache.org/jira/browse/MNG</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/54737effce1bb30281045963680d5d13</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-06-16T23:17:35.88</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-06-16T21:29:46.777</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-06-17T09:27:13.257</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-06-17T09:27:13.257</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">true</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Available</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-06-17T10:30:22.733</d:DownloadCacheDate>
+      <d:DownloadCache>https://repository.apache.org/content/groups/snapshots/org/apache/maven/apache-maven/4.1.0-SNAPSHOT/apache-maven-4.1.0-20260616.203347-398-bin.zip^x86/apache-maven-4.1.0-20260616.203347-398-bin.zip^D2604B5487F039DB0E73EC2C6B6EC34951ACAE601079015E596941427E98750444552F31743AD4EED7CFDDE2E8F4D6184B4CE28611D0FFE4A292225BE636336B</d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-06-17T09:27:13.257</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='OctopusDeploy.Tentacle',Version='9.2.4090')</id>
+    <title type="text">OctopusDeploy.Tentacle</title>
+    <summary type="text">Deployment agent for Octopus Deploy, an automated deployment server.</summary>
+    <updated>2026-06-17T21:00:23Z</updated>
+    <author>
+      <name>Octopus Deploy</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='OctopusDeploy.Tentacle',Version='9.2.4090')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='OctopusDeploy.Tentacle',Version='9.2.4090')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/OctopusDeploy.Tentacle/9.2.4090" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>9.2.4090</d:Version>
+      <d:Title>Octopus Deploy - Tentacle</d:Title>
+      <d:Description>Octopus Deploy is a Continuous Delivery platform for complex deployments across your entire stack. Deploy with ease to Kubernetes, Linux, Windows virtual machines, Amazon Web Services, Azure, or Google Cloud. If the Octopus Tentacle agent, SSH, command line, or a web service can speak to it, Octopus can deploy to it.
+
+This package installs the Tentacle deployment agent service.</d:Description>
+      <d:Tags>octopus deploy</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-06-17T11:05:54.143</d:Created>
+      <d:Dependencies></d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">1291572</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">7</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/OctopusDeploy.Tentacle/9.2.4090</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/OctopusDeploy.Tentacle/9.2.4090</d:ReportAbuseUrl>
+      <d:IconUrl>http://i.octopusdeploy.com/resources/Avatar3-32x32.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language>en-US</d:Language>
+      <d:Published m:type="Edm.DateTime">2026-06-17T11:05:54.143</d:Published>
+      <d:LicenseUrl>http://octopusdeploy.com/pricing</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>YMRuFN3qtKbwpfX2UcphqIOHfAJLViJiGh782oPLj8izVwjaKGKIx0Bi5M1fsdhStvh/5ZIRZRqGez94eCeneQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">2634</d:PackageSize>
+      <d:ProjectUrl>http://octopusdeploy.com/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl></d:PackageSourceUrl>
+      <d:DocsUrl></d:DocsUrl>
+      <d:MailingListUrl></d:MailingListUrl>
+      <d:BugTrackerUrl></d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/16070df27d152e32f21b1a7282f8b615</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-06-17T13:28:50.607</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-06-17T11:38:41.17</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-06-17T20:06:23.1</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-06-17T20:06:23.1</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">true</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Available</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-06-17T21:07:36.293</d:DownloadCacheDate>
+      <d:DownloadCache>https://download.octopusdeploy.com/octopus/Octopus.Tentacle.9.2.4090-x64.msi^x64/Octopus.Tentacle.9.2.4090-x64.msi^CEADF88C7EF333472F83E39664671EDABF3CF80563BAC327F7E1F82E364D7F15FB61C1C2E1E991ABAAF25BA587107ADCCAB2FE193560F2417B12A7E01BFAE9F3|https://download.octopusdeploy.com/octopus/Octopus.Tentacle.9.2.4090.msi^x86/Octopus.Tentacle.9.2.4090.msi^A839859E8CE629681D68733CE0E3932EEA9036207DD8B9B7BDDD7F2B12ECC3840426129E1907E2CD7A7164C3776E286B53CD29707FB3019D9CDBE63AE25572C0</d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-06-17T20:06:23.1</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='postman',Version='12.15.5')</id>
+    <title type="text">postman</title>
+    <summary type="text">Postman for Windows</summary>
+    <updated>2026-06-17T21:00:23Z</updated>
+    <author>
+      <name>Postdot Technologies, Inc.</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='postman',Version='12.15.5')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='postman',Version='12.15.5')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/postman/12.15.5" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>12.15.5</d:Version>
+      <d:Title>Postman for Windows</d:Title>
+      <d:Description>Postman helps you be more efficient while working with APIs. Using Postman, you can construct complex HTTP requests quickly, organize them in collections and share them with your co-workers.</d:Description>
+      <d:Tags>postman</d:Tags>
+      <d:Copyright>Postdot Technologies, Inc.</d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-06-17T10:55:47.46</d:Created>
+      <d:Dependencies></d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">2535908</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">9</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/postman/12.15.5</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/postman/12.15.5</d:ReportAbuseUrl>
+      <d:IconUrl>https://raw.githubusercontent.com/kendaleiv/chocolatey-postman/main/postman-logo.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-06-17T10:55:47.46</d:Published>
+      <d:LicenseUrl></d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>6w8xpspBZPm+82RozHhCoF/ndorIypokPnzf2dZ1ZNU9FQmAorIFv+GG+IOmbMCIjdETZOWAedDexDtHH0Ryhg==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">2777</d:PackageSize>
+      <d:ProjectUrl>https://www.postman.com/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/kendaleiv/chocolatey-postman</d:PackageSourceUrl>
+      <d:DocsUrl></d:DocsUrl>
+      <d:MailingListUrl></d:MailingListUrl>
+      <d:BugTrackerUrl></d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/865d531d1f940c7e46699a92ccc0e1b1</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-06-17T13:24:02.803</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-06-17T11:28:31.523</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-06-17T20:01:42.76</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-06-17T20:01:42.76</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">true</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Available</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-06-17T21:02:24.933</d:DownloadCacheDate>
+      <d:DownloadCache>https://dl.pstmn.io/download/version/12.15.5/win64^x64/Postman%20v12.15.5%20(x64).exe^1277A51007B946C3EA3FD2D3B67094657AEE7370B326756F537C3461B03661560EC5F9D6F40F41F53B05C8B8FCB297D0135453DC9A9DB3D86D516C3A6D7359C5</d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-06-17T20:01:42.76</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <link rel="next" href="http://community.chocolatey.org/api/v2/Packages?$filter=IsLatestVersion%20eq%20true&amp;$orderby=Published%20desc&amp;$top=3&amp;$skiptoken='1781730023440','postman'" />
+</feed>

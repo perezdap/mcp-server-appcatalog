@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://community.chocolatey.org/api/v2/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Search</title>
+  <id>http://community.chocolatey.org/api/v2/Search</id>
+  <updated>2026-06-17T21:10:40Z</updated>
+  <link rel="self" title="Search" href="Search" />
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='vlc',Version='3.0.23')</id>
+    <title type="text">vlc</title>
+    <summary type="text">VLC Media Player</summary>
+    <updated>2026-01-08T17:05:09Z</updated>
+    <author>
+      <name>VideoLAN Organization</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='vlc',Version='3.0.23')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='vlc',Version='3.0.23')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/vlc/3.0.23" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>3.0.23</d:Version>
+      <d:Title>VLC media player</d:Title>
+      <d:Description>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+
+![Screenshot](https://github.com/chocolatey-community/chocolatey-coreteampackages/blob/master/automatic/vlc/screenshot.png?raw=true)
+
+## Features
+
+- Plays Files, Discs, Webcams, Devices and Streams.
+- Fast - Hardware Decoding.
+- Plays most codecs with no codec packs needed - MPEG-2, MPEG-4, H.264, MKV, WebM, WMV, MP3...
+- Complete feature-set over the video, subtitle synchronisation, video and audio filters.
+- Runs on all platforms - Windows, Linux, Mac OS X, Unix, iOS, Android ...
+- Completely Free - no spyware, no ads and no user tracking.
+
+## Notes
+
+- Related packages: [vlc-skins](https://chocolatey.org/packages/vlc-skins) [vlc-nightly](https://chocolatey.org/packages/vlc-nightly)
+
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>vlc foss cross-platform multimedia audio video mp3 dvd avi media player admin</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-01-08T12:23:16.477</d:Created>
+      <d:Dependencies>vlc.install:[3.0.23]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">21290176</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">22</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/vlc/3.0.23</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/vlc/3.0.23</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@3952380efd0776bea6d964ed4e28efa979b434d2/icons/vlc.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-01-08T12:23:16.477</d:Published>
+      <d:LicenseUrl>http://www.videolan.org/legal.html</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>FSCjKaU+CPqFSPpMRBx3RAIu8X1LaeZFvCpHgVz1AHNimG9WlT/izl7889/Hrazik7Ort5MjiZl48wE8FOSoKQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3367</d:PackageSize>
+      <d:ProjectUrl>http://www.videolan.org/vlc/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl>http://www.videolan.org/vlc/download-sources.html</d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/vlc</d:PackageSourceUrl>
+      <d:DocsUrl>https://wiki.videolan.org/Documentation:Documentation/</d:DocsUrl>
+      <d:MailingListUrl>https://forum.videolan.org/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://code.videolan.org/videolan/vlc/-/issues/</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/13d9618dc170e8d6ddff5e878ae2fa4f</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-01-08T15:43:34.377</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-01-08T15:39:29.02</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-01-08T16:17:01.527</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-01-08T16:17:01.527</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-01-08T17:17:26.97</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-01-08T16:17:01.527</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='vlc-nightly',Version='4.0.0.20260617')</id>
+    <title type="text">vlc-nightly</title>
+    <summary type="text">The Nightly version of VLC</summary>
+    <updated>2026-06-17T17:30:22Z</updated>
+    <author>
+      <name>VideoLAN Organization</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='vlc-nightly',Version='4.0.0.20260617')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='vlc-nightly',Version='4.0.0.20260617')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/vlc-nightly/4.0.0.20260617" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>4.0.0.20260617</d:Version>
+      <d:Title>VLC Nightly</d:Title>
+      <d:Description>The Nightly version of VLC is the latest unstable and unsupported software as provided by VideoLAN
+
+VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+
+![Screenshot](https://i.imgur.com/DEG19Fs.png)
+
+## Features
+
+- Plays Files, Discs, Webcams, Devices and Streams.
+- Fast - Hardware Decoding.
+- Plays most codecs with no codec packs needed - MPEG-2, MPEG-4, H.264, MKV, WebM, WMV, MP3...
+- Complete feature-set over the video, subtitle synchronisation, video and audio filters.
+- Runs on all platforms - Windows, Linux, Mac OS X, Unix, iOS, Android ...
+- Completely Free - no spyware, no ads and no user tracking.
+
+## Package parameters
+
+- `/Language:en` - Two letter language code: nl, en, fr ...
+
+Example: `choco install --params "'/Language:fr'"` *Will set the language of VLC to french*
+
+**Please Note**: This is an automatically updated package. If you find it is
+out of date by more than a day or two, please contact the maintainer(s) and
+let them know [here](https://github.com/mkevenaar/chocolatey-packages/issues) that the package is no longer updating correctly.</d:Description>
+      <d:Tags>vlc-nightly vlc videolan admin</d:Tags>
+      <d:Copyright>VideoLAN</d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-06-17T06:19:52.093</d:Created>
+      <d:Dependencies>chocolatey-core.extension:1.3.3:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">743938</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">8</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/vlc-nightly/4.0.0.20260617</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/vlc-nightly/4.0.0.20260617</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/mkevenaar/chocolatey-packages@6df622a4cab687cecd53a762025616155896faff/icons/vlc-nightly.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-06-17T06:19:52.093</d:Published>
+      <d:LicenseUrl>http://www.videolan.org/legal.html</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>H0rEzURKRgLYh58mO6X5AMI5NwNCQ8hWk4sfwNqvEeZmrB37WXAcP9Iqun18nEjUWngxTQtUsty/dY9iTRwpow==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">63555263</d:PackageSize>
+      <d:ProjectUrl>https://nightlies.videolan.org/index.html</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl>http://www.videolan.org/vlc/download-sources.html</d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/mkevenaar/chocolatey-packages/tree/master/automatic/vlc-nightly</d:PackageSourceUrl>
+      <d:DocsUrl></d:DocsUrl>
+      <d:MailingListUrl></d:MailingListUrl>
+      <d:BugTrackerUrl></d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/66d891d8f42e87dc84c9eec63d769583</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-06-17T08:38:45.87</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-06-17T06:52:52.79</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-06-17T17:25:18.893</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-06-17T17:25:18.893</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-06-17T18:28:14.083</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>Flagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-06-17T17:25:18.893</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Note</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='vlc.install',Version='3.0.23')</id>
+    <title type="text">vlc.install</title>
+    <summary type="text">VLC Media Player</summary>
+    <updated>2026-01-08T16:35:19Z</updated>
+    <author>
+      <name>VideoLAN Organization</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='vlc.install',Version='3.0.23')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='vlc.install',Version='3.0.23')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/vlc.install/3.0.23" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>3.0.23</d:Version>
+      <d:Title>VLC media player (Install)</d:Title>
+      <d:Description>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+
+![Screenshot](https://github.com/chocolatey-community/chocolatey-coreteampackages/blob/master/automatic/vlc/screenshot.png?raw=true)
+
+## Features
+
+- Plays Files, Discs, Webcams, Devices and Streams.
+- Fast - Hardware Decoding.
+- Plays most codecs with no codec packs needed - MPEG-2, MPEG-4, H.264, MKV, WebM, WMV, MP3...
+- Complete feature-set over the video, subtitle synchronisation, video and audio filters.
+- Runs on all platforms - Windows, Linux, Mac OS X, Unix, iOS, Android ...
+- Completely Free - no spyware, no ads and no user tracking.
+
+## Package parameters
+
+- `/Language:en` - Two letter language code: nl, en, fr ...
+
+
+Example: `choco install --params "/Language:fr"` *Will set the language of VLC to french*
+
+## Notes
+
+- Related packages: [vlc-skins](https://chocolatey.org/packages/vlc-skins) [vlc-nightly](https://chocolatey.org/packages/vlc-nightly)
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>vlc foss cross-platform multimedia audio video mp3 dvd avi media player admin</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-01-08T12:24:39.067</d:Created>
+      <d:Dependencies>chocolatey-core.extension:1.3.3:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">6417042</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">187</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/vlc.install/3.0.23</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/vlc.install/3.0.23</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@3952380efd0776bea6d964ed4e28efa979b434d2/icons/vlc.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-01-08T12:24:39.067</d:Published>
+      <d:LicenseUrl>http://www.videolan.org/legal.html</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>FoGb9MuPxDRDKk9w7rVO5AhPcZeV6xGoW9y6uJazHSQI0k7XJuvYnRt5AL9gB7Rm81/08dDZUWvCsu4dvD4GeQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">90395876</d:PackageSize>
+      <d:ProjectUrl>http://www.videolan.org/vlc/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl>http://www.videolan.org/vlc/download-sources.html</d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/vlc.install</d:PackageSourceUrl>
+      <d:DocsUrl>https://wiki.videolan.org/Documentation:Documentation/</d:DocsUrl>
+      <d:MailingListUrl>https://forum.videolan.org/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://code.videolan.org/videolan/vlc/-/issues/</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/16aa8a4ac68de8ea63bd9652c99fe3a0</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-01-08T13:06:50.277</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-01-08T12:57:23.42</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-01-08T15:35:41.957</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-01-08T15:35:41.957</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-01-08T16:36:47.48</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-01-08T15:35:41.957</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='vlc.portable',Version='3.0.21')</id>
+    <title type="text">vlc.portable</title>
+    <summary type="text">VLC Media Player</summary>
+    <updated>2026-05-23T14:00:20Z</updated>
+    <author>
+      <name>VideoLAN Organization</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='vlc.portable',Version='3.0.21')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='vlc.portable',Version='3.0.21')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/vlc.portable/3.0.21" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>3.0.21</d:Version>
+      <d:Title>VLC media player (Portable)</d:Title>
+      <d:Description>VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
+
+![Screenshot](https://github.com/chocolatey-community/chocolatey-coreteampackages/blob/master/automatic/vlc/screenshot.png?raw=true)
+
+## Features
+
+- Plays Files, Discs, Webcams, Devices and Streams.
+- Fast - Hardware Decoding.
+- Plays most codecs with no codec packs needed - MPEG-2, MPEG-4, H.264, MKV, WebM, WMV, MP3...
+- Complete feature-set over the video, subtitle synchronisation, video and audio filters.
+- Runs on all platforms - Windows, Linux, Mac OS X, Unix, iOS, Android ...
+- Completely Free - no spyware, no ads and no user tracking.
+
+## Package parameters
+
+- `/Language:en` - Two letter language code: nl, en, fr ...
+
+
+Example: `choco install --params "/Language:fr"` *Will set the language of VLC to french*
+
+## Notes
+
+- Related packages: [vlc-skins](https://chocolatey.org/packages/vlc-skins) [vlc-nightly](https://chocolatey.org/packages/vlc-nightly)
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>vlc foss cross-platform multimedia audio video mp3 dvd avi media player admin</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-06-09T12:17:47.813</d:Created>
+      <d:Dependencies>chocolatey-core.extension:1.3.3:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">93467</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">33187</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/vlc.portable/3.0.21</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/vlc.portable/3.0.21</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@3952380efd0776bea6d964ed4e28efa979b434d2/icons/vlc.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-06-09T12:17:47.813</d:Published>
+      <d:LicenseUrl>http://www.videolan.org/legal.html</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>mLu4ZT3v7+9sp3OxCUpqu4Anl++7wQDlovJfxdYsf/jaJpMgGYRuR46w0KLZ6TkVMB7XqYOqfZ4XSS+4p+ti3Q==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">37164737</d:PackageSize>
+      <d:ProjectUrl>http://www.videolan.org/vlc/</d:ProjectUrl>
+      <d:ReleaseNotes></d:ReleaseNotes>
+      <d:ProjectSourceUrl>http://www.videolan.org/vlc/download-sources.html</d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/vlc.portable</d:PackageSourceUrl>
+      <d:DocsUrl>https://wiki.videolan.org/Documentation:Documentation/</d:DocsUrl>
+      <d:MailingListUrl>https://forum.videolan.org/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://code.videolan.org/videolan/vlc/-/issues/</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/5da2eb74418b326438d8aea91d897eb8</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-05-23T14:40:55.51</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-06-09T12:53:12.083</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2025-01-23T23:12:21.757</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-06-09T13:49:36.47</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-06-09T14:53:55.28</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>Flagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-06-09T13:49:36.47</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Note</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='vlc-skins',Version='2026.5.16')</id>
+    <title type="text">vlc-skins</title>
+    <summary type="text">Skins (themes) for VLC</summary>
+    <updated>2026-06-16T01:27:44Z</updated>
+    <author>
+      <name>Various</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='vlc-skins',Version='2026.5.16')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='vlc-skins',Version='2026.5.16')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/vlc-skins/2026.5.16" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>2026.5.16</d:Version>
+      <d:Title>VLC Skins (Install)</d:Title>
+      <d:Description>## VLC Skins (Install)
+
+How to use these skins?
+Skins do not work on Mac OS X!
+Put the downloaded VLT files in the following folder:
+On Windows: the skins folder in the VLC installation directory (e.g. C:\Program Files\VideoLAN\VLC\skins)
+On Linux/Unix: ~/.local/share/vlc/skins2
+
+Then open your VLC settings and change your interface from native to skins. You can choose your desired skin already there or change it when you are in the skins mode by rightclicking somewhere on the skin and going to Interface&gt;Choose Skin.
+VLC needs to be restarted to change to skins mode.
+
+#### [choco://vlc-skins](choco://vlc-skins)
+To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support ](https://chocolatey.org/packages/choco-protocol-support)
+
+### Package-specific issue
+If this package isn't up-to-date for some days, [Create an issue](https://github.com/tunisiano187/Chocolatey-packages/issues/new/choose)
+
+Support the package maintainer and [![Patreon](https://cdn.jsdelivr.net/gh/tunisiano187/Chocolatey-packages@d15c4e19c709e7148588d4523ffc6dd3cd3c7e5e/icons/patreon.png)](https://www.patreon.com/bePatron?u=39585820)</d:Description>
+      <d:Tags>vlc skins admin</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-05-16T14:34:11.767</d:Created>
+      <d:Dependencies>vlc::</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">18171</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">246</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/vlc-skins/2026.5.16</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/vlc-skins/2026.5.16</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/tunisiano187/Chocolatey-packages@bd24a958627b8a078a3c55dd57008780f42294fd/icons/vlc-skins.png</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-05-16T14:34:11.767</d:Published>
+      <d:LicenseUrl>https://www.videolan.org/legal.html</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>3uIusMaTFDhGzL6OFXGOqP8JcoZTe5jmXa/kUHCr8cyPVTPe9BW6bZGRb/vI99gABpOyoHwuQlbmm2+y52qR3A==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">38812288</d:PackageSize>
+      <d:ProjectUrl>https://www.videolan.org/vlc/skins.html</d:ProjectUrl>
+      <d:ReleaseNotes>According to the download notes "This pack is updated daily" but all files are from 2011/02/03.</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/tunisiano187/Chocolatey-packages/tree/master/automatic/vlc-skins</d:PackageSourceUrl>
+      <d:DocsUrl>https://wiki.videolan.org/Skins/</d:DocsUrl>
+      <d:MailingListUrl>https://forum.videolan.org/viewforum.php?f=15</d:MailingListUrl>
+      <d:BugTrackerUrl></d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/845317665dd679b88fcd7a80b78924f8</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-05-16T15:12:05.98</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-05-16T15:08:28.743</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-05-16T22:24:04.26</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-05-16T22:24:04.26</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-05-16T23:26:14.393</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-05-16T22:24:04.26</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <link rel="next">
+    <m:error>
+      <m:code></m:code>
+      <m:message xml:lang="en-US">Object reference not set to an instance of an object.</m:message>
+    </m:error>

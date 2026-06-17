@@ -1,0 +1,2438 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xml:base="http://community.chocolatey.org/api/v2/" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Packages</title>
+  <id>http://community.chocolatey.org/api/v2/Packages</id>
+  <updated>2026-06-17T21:10:41Z</updated>
+  <link rel="self" title="Packages" href="Packages" />
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='26.1.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2026-05-28T15:15:23Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='26.1.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='26.1.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/26.1.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>26.1.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright m:null="true"></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-05-28T13:24:31.49</d:Created>
+      <d:Dependencies>7zip.install:[26.1.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">0</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">197</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/26.1.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/26.1.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language m:null="true"></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-05-28T13:24:31.49</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>pg1BQSf/TT0IkL+y6mnThXd5K02sLms1FzLfSJ/9Q6rjYF5eQNischYB9c84AVfzrTn9RmPVNjkmbGb3LiL8rA==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3612</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/c9a6df1f4411a3a5eabe06c93f9e7776</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-05-28T14:13:07.45</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-05-28T14:09:23.727</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime">2026-05-17T18:13:59.8832885Z</d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-05-28T14:16:57.213</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-05-28T14:16:57.213</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-05-28T15:19:49.6772397Z</d:DownloadCacheDate>
+      <d:DownloadCache m:null="true"></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-05-28T14:16:57.213</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='26.0.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2026-02-13T14:20:20Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='26.0.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='26.0.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/26.0.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>26.0.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright m:null="true"></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2026-02-12T18:10:41.9</d:Created>
+      <d:Dependencies>7zip.install:[26.0.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">0</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">157</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/26.0.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/26.0.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language m:null="true"></d:Language>
+      <d:Published m:type="Edm.DateTime">2026-02-12T18:10:41.9</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>JxEUUe+u5w7f1uQccU5P2NJRz6UcYsBmcTc9Amy4S7veQJYBunGuNbGB97cYmI4LnAdtT6gxSAxfqWx8G/lTkw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3610</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/ae5e2795cda892480d67028ebbc27717</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2026-02-13T13:25:25.957</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2026-02-13T13:18:33.237</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2026-02-13T13:31:41.787</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2026-02-13T13:31:41.787</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2026-02-13T14:35:26.0870002Z</d:DownloadCacheDate>
+      <d:DownloadCache m:null="true"></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2026-02-13T13:31:41.787</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='25.1.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-11-11T10:35:23Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='25.1.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='25.1.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/25.1.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>25.1.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2025-08-03T12:10:07.547</d:Created>
+      <d:Dependencies>7zip.install:[25.1.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">3844587</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/25.1.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/25.1.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">true</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">true</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2025-08-03T12:10:07.547</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>PDZLBosvh3PbNWpruWiXw/E8vqRq+xNI0WE5+6yyGDgYawTWETA4Y0P7vWwv6dsg0iT7i8byBdWXxiZGuTjHjg==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3611</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/c3d3a7150899f8abfd4d7be995a08cbe</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2025-11-11T10:44:58.6972492Z</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2025-08-03T13:17:08.74</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2025-08-03T13:48:14.437</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2025-08-03T13:48:14.437</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2025-08-03T14:49:08.99</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2025-08-03T13:48:14.437</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='25.0.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T20:19:51Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='25.0.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='25.0.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/25.0.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>25.0.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2025-07-05T18:10:10.403</d:Created>
+      <d:Dependencies>7zip.install:[25.0.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">812325</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/25.0.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/25.0.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2025-07-05T18:10:10.403</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>qvWgRRuPBlUX59+v7eMFNq6cq+a+U0E1sqQmAJeFaKt0jKfSbCqbsUawEDAbCeKxjMuwkgGf1HMZy3grBGa9OQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3611</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/068671f1779ee4dc5a93b6c68e5f35b6</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2025-07-05T19:24:38.57</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2025-07-05T19:18:37.233</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2025-07-06T01:23:59.02</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2025-07-06T01:23:59.02</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2025-07-06T02:27:10.52</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2025-07-06T01:23:59.02</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.9.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T21:04:44Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.9.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.9.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.9.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.9.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-11-30T12:09:05.427</d:Created>
+      <d:Dependencies>7zip.install:[24.9.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">2519701</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.9.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.9.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-11-30T12:09:05.427</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>UWTWg6Lw0cknKyVYx5tZZSiJHJZ5/f3RoFHJL9Uvg4pYMo9KVEAma9ZaWGA8q9/TuIBZwN9oDGHEC2fNimHj/A==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3613</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/605b336ce258a3a9ed195335525c63e6</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2025-05-22T10:21:22.263</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-11-30T13:36:09.457</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2025-01-27T09:42:58.28</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-11-30T14:01:14.347</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-11-30T15:05:34.637</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-11-30T14:01:14.347</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.8.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T18:34:53Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.8.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.8.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.8.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.8.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-08-12T12:09:02.123</d:Created>
+      <d:Dependencies>7zip.install:[24.8.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">1501639</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.8.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.8.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-08-12T12:09:02.123</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>t6EpXxXhBwAuWwENGDFVFiNYTgy84cuul1/+Em18B9AFkUAaZrcM5emeKjZcJQTZbgqWRKDZTMWkG35PnYprhA==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3608</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/90152542a5c4e16f70460f0385b214fe</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-11-06T00:20:43.38</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-08-12T13:08:14.067</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2024-11-06T00:20:43.547</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-08-12T13:23:51.23</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-08-12T14:24:25.69</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-08-12T13:23:51.23</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.7.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T00:19:46Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.7.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.7.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.7.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.7.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-06-19T12:08:59.89</d:Created>
+      <d:Dependencies>7zip.install:[24.7.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">1040635</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.7.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.7.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-06-19T12:08:59.89</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>dJYMKTvShsPjfuWlt+w3c3TIIYfs6s5G32mhWJeknOWDO95HFuaruWZHCsiv2a0atXH8KblP5//wG0u8IrF1ag==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3613</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/a919ac2b5d01c24e8ed25b26e11ad7e8</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-07-23T23:09:07.17</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-06-19T12:41:57.87</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2024-07-23T23:09:07.337</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-06-19T14:11:45.05</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-06-19T15:13:54.78</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-06-19T14:11:45.05</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.6.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-26T05:49:49Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.6.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.6.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.6.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.6.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-05-27T12:10:20.42</d:Created>
+      <d:Dependencies>7zip.install:[24.6.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">737470</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.6.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.6.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-05-27T12:10:20.42</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>NLrBtpBKTb2jQLQ1xADO0xJ5pSouVGpkuAkxrV1wCl/Zgfilnlv/2ysh8byWODs+m2afuQBtC8bjfNDwi8eCBw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3611</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/633f393adc03f961d894d3f67587e1c3</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-05-27T15:38:08.333</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-05-27T12:45:25.193</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2024-05-27T15:55:29.96</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-05-27T15:55:29.96</d:PackageApprovedDate>
+      <d:PackageReviewer>TheCakeIsNaOH</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-05-27T17:00:22.97</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-05-27T15:55:29.96</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.5.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-27T14:19:48Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.5.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.5.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.5.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.5.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-05-15T12:10:35.567</d:Created>
+      <d:Dependencies>7zip.install:[24.5.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">528842</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.5.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.5.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-05-15T12:10:35.567</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>ymwRMmeGqCdz2WIwdN3h1du1X6tvJe5xbHHYKxzK3wT6WU/2h3cqVkT6lpzWI92HB/tmjdyAdrc0T6MgGXX/Og==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3611</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/132d11fcebab667d9c8327359ec0dc7f</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-05-15T20:28:05.047</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-05-15T12:42:21.46</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2024-05-15T20:38:33.973</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2024-05-15T20:38:33.973</d:PackageApprovedDate>
+      <d:PackageReviewer>TheCakeIsNaOH</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2024-05-15T21:41:11.547</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-05-15T20:38:33.973</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.4.0-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-27T13:49:50Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.4.0-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.4.0-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.4.0-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.4.0-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-04-05T18:09:10.337</d:Created>
+      <d:Dependencies>7zip.install:[24.4.0-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">714</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.4.0-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.4.0-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-04-05T18:09:10.337</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>PSe6NzWJ81BnrR1NtyA/s90UgKA6LvQ/M7947VZyR5n0INa0QJRnfwwV2eoK/9PTLRDOR3F4SaSWNsPHlFGAGA==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3622</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/a1859c0cf6cb0b8f186fd8b892d8744c</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-04-05T19:17:23.08</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-04-05T18:45:48.503</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-04-05T19:30:42.017</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.3.0-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-23T09:34:46Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.3.0-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.3.0-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.3.0-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.3.0-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-03-24T00:11:23.837</d:Created>
+      <d:Dependencies>7zip.install:[24.3.0-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">327</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.3.0-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.3.0-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-03-24T00:11:23.837</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>mVCxe0/BZDfwlcpM0SExwY+gJFbpEeFiOOAZZ4bBFeagFbZGGGKb0aGAHvhRurrqhq6mq/8ZihQelJtjRaWhMw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3621</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/6cc6075a3cc274a2ee0fa729dac6488d</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-03-24T01:14:21.163</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-03-24T00:46:47.297</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-03-24T02:44:19.08</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.2.0-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-23T05:19:50Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.2.0-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.2.0-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.2.0-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.2.0-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-03-22T18:09:18.167</d:Created>
+      <d:Dependencies>7zip.install:[24.2.0-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">139</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.2.0-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.2.0-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-03-22T18:09:18.167</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>mtMSjkDHO8gubf34XxFjqk1kFnFS23tmOrppl/hd2e49DgyAsi6EqhLLy+gCI1pBKiDO4Shpf/waSOujFjSjvQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3620</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/c4ad9393529d79753653f5f8aef9ce02</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-03-22T18:52:06.35</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-03-22T18:41:09.49</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-03-22T19:41:50.68</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='24.1.0-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-19T05:34:57Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.1.0-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='24.1.0-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/24.1.0-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>24.1.0-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2024-02-02T12:08:08.103</d:Created>
+      <d:Dependencies>7zip.install:[24.1.0-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">357</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/24.1.0-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/24.1.0-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2024-02-02T12:08:08.103</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>0y5gKDg0+fFlfymlQJ+EBMGSqhIO8ZjyYPJUUxtAiMXI0gswALAmBhnleYpSW9/RdfdDh+8O8T+7boy3VzgtqQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3620</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/8dbe37e68fa4772fe592981b7ca289fb</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2024-02-02T12:56:31.357</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2024-02-02T12:44:23.513</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2024-02-02T21:16:08.3</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='23.1.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T17:50:01Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='23.1.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='23.1.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/23.1.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>23.1.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2023-06-21T00:08:30.31</d:Created>
+      <d:Dependencies>7zip.install:[23.1.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">4517072</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/23.1.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/23.1.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2023-06-21T00:08:30.31</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>hsYlJkAOzwVQ8+/hVjxaVkV6obzPflj9p3GJVX1B5KOGfKCOMZf0r/GuLYCFeNFXdQG0Og3zXAv6Sl5K+S54HQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">3608</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/choco-bot/473642f21df0f0f79a724466d953b606</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2023-06-21T01:48:26.22</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2023-06-21T00:44:13.427</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2023-06-21T09:30:53.733</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2023-06-21T09:30:53.733</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2023-06-21T10:35:46.763</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2023-06-21T09:30:53.733</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='22.1')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T07:04:47Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='22.1')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='22.1')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/22.1" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>22.1</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2022-07-16T12:08:30.167</d:Created>
+      <d:Dependencies>7zip.install:[22.1]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">3053552</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/22.1</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/22.1</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2022-07-16T12:08:30.167</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>NX/wvBxlO66YVGIAnop8TkSxcIptt7on/33AfkudbP+u9cjgrsxV+YAZxK5yMD0hx8O0BJjjU3MVbv+70EO6lw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">5112</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/7809f1fbb77d3802002669cf4f42c61e</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2022-07-16T12:45:14.143</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2022-07-16T12:42:16.277</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2022-07-16T13:08:56.84</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2022-07-16T13:08:56.84</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2022-07-16T14:12:27.663</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2022-07-16T13:08:56.84</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='22.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-27T23:19:55Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='22.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='22.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/22.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>22.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the Explorer process. This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.
+- **If the package is out of date please check [Version History](#versionhistory) for the latest submitted version. If you have a question, please ask it in [Chocolatey Community Package Discussions](https://github.com/chocolatey-community/chocolatey-packages/discussions) or raise an issue on the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages/issues) if you have problems with the package. Disqus comments will generally not be responded to.**</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2022-06-20T00:08:21.327</d:Created>
+      <d:Dependencies>7zip.install:[22.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">590878</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/22.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/22.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2022-06-20T00:08:21.327</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>leoyRu3vgexO5I1D3qYHg5hKVKel9nJqsJWygF6MBbU0Zo/QiEAuBDNQnV3GuRwQAKCBYg102i0tdXLtOTKWFw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">5112</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/21538c22bf3159bdd58ae51c4421c4a8</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2022-06-20T00:45:06.847</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2022-06-20T00:42:04.167</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2022-06-20T07:09:08.35</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2022-06-20T07:09:08.35</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2022-06-20T08:12:04.857</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2022-06-20T07:09:08.35</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.7')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T20:04:44Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.7')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.7')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.7" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.7</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-12-27T12:08:12.62</d:Created>
+      <d:Dependencies>7zip.install:[21.7]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">1507726</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.7</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.7</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-12-27T12:08:12.62</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>0wzF6O4KYmkKqH4NkMDevpeDs/yT2g+zdB2zrQiGNyE+LP/wbNlb/bvJPovxtjTLTmW0aCuYWFO0s5qyUKKRjQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4419</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/3e6fc94448a20851ba623b7d800f44f4</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2022-01-06T23:01:11.61</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-12-27T12:43:11.513</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2022-01-07T04:41:08.683</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2022-01-07T04:41:08.683</d:PackageApprovedDate>
+      <d:PackageReviewer>flcdrg</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2022-01-07T05:41:10.893</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2022-01-07T04:41:08.683</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.6')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-18T10:19:55Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.6')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.6')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.6" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.6</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-11-25T18:08:04.287</d:Created>
+      <d:Dependencies>7zip.install:[21.6]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">506958</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.6</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.6</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-11-25T18:08:04.287</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>XqrKbd/A/fdManWad1FKhusH7QrJB2TR7Vypqg8J1C4JfrRR+w2Ewh0jTVmLKBEmTgy447yKkIOCQSCqe9HWEA==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4419</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/1ec9c501ffb74a9b0b9ce41f866afb8f</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-11-30T15:27:40.583</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-11-25T18:44:02.987</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2021-11-30T17:09:09.523</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2021-11-30T17:09:09.523</d:PackageApprovedDate>
+      <d:PackageReviewer>TheCakeIsNaOH</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2021-11-30T18:11:18.36</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-11-30T17:09:09.523</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.5')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-18T10:34:52Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.5')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.5')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.5" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.5</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-11-21T12:07:49.52</d:Created>
+      <d:Dependencies>7zip.install:[21.5]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">281452</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.5</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.5</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-11-21T12:07:49.52</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>QDppF6YLSJ7Evbk6MARHVCFRNhVejhw/T1GWIqj48sJncMokTKm9pM5FZNwjUMDc+6HP6c0fa0avV+wBVxF14w==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4419</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/0db0d53a170c98dd5b935d559119a477</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-11-22T14:52:58.067</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-11-21T12:40:16.343</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2021-11-22T15:27:14.313</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2021-11-22T15:27:14.313</d:PackageApprovedDate>
+      <d:PackageReviewer>TheCakeIsNaOH</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2021-11-22T16:29:01.87</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-11-22T15:27:14.313</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.4-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-23T02:20:27Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.4-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.4-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.4-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.4-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-11-02T18:07:52.16</d:Created>
+      <d:Dependencies>7zip.install:[21.4-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">855</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.4-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.4-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-11-02T18:07:52.16</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>NpaoYfhEQq/PU1WZ9XOKcqC+O8noSPelb7myoCr3LyLm6DWY8fIFXaNGPgKWgD2eH6VM6zqstKR5JZwT+87rUg==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4427</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-packages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/50a08fb684e6bc2456604a8059573d65</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-11-02T18:45:10.497</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-11-02T18:40:31.89</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-11-03T11:23:37.743</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.3-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-15T16:35:13Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.3-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.3-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.3-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.3-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-07-20T18:08:02.773</d:Created>
+      <d:Dependencies>7zip.install:[21.3-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">1868</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.3-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.3-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-07-20T18:08:02.773</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>hU5VJsUIj7i5o0Sn4G90nWoYkclMpJToK+9U/FedHtLp2U7yg74mzJctHIbuHq+fMV+QkZY6Kde0NeGUVlV3MQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4431</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/9fd3ede1efdd529253f9268f649f49bb</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-07-20T18:57:32.54</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-07-20T18:42:54.377</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-07-20T20:05:23.843</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.2-alpha')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-26T02:34:56Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.2-alpha')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.2-alpha')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.2-alpha" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.2-alpha</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-05-06T12:07:50.783</d:Created>
+      <d:Dependencies>7zip.install:[21.2-alpha]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">1092</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.2-alpha</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.2-alpha</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-05-06T12:07:50.783</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>NeIQgz+Hf8tDCf+DEWq28QsueRVExdZRb/0ctksLyszFKHQTQhgUse2m9v+Xos0ECBRaUX64HdfaZLiBxgCgWQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4433</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/e32d0a574899d86d132d33614a259e7f</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-05-06T12:53:43.487</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-05-06T12:39:41.623</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-05-06T13:14:41.66</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>None</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='21.1-alpha')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-14T20:19:53Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.1-alpha')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='21.1-alpha')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/21.1-alpha" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>21.1-alpha</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2021-03-31T16:32:15.84</d:Created>
+      <d:Dependencies>7zip.install:[21.1-alpha]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">407</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/21.1-alpha</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/21.1-alpha</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2021-03-31T16:32:15.84</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>8/lhbtxd9EcQ9udljyzoFj1bE1D847d8an5wUyeWdKG6wsu3hzW6gdxvWectGEeXjk9HNVd4xsPzNTh/0WjDqg==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4433</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/1cd203c0d997705983a9dd441b6413fe</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2021-04-02T19:33:30.903</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2021-03-31T17:05:49.107</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2021-04-27T13:06:22.457</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='19.0')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-28T18:49:51Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='19.0')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='19.0')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/19.0" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>19.0</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2019-02-22T12:06:30.77</d:Created>
+      <d:Dependencies>7zip.install:[19.0]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">3845748</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/19.0</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/19.0</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2019-02-22T12:06:30.77</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>mCL1BC8qDsmqKQcUJnFs69gUAJa/RP7u6kgm9f3BymtxHp3tbL9K1jmrg/ysd9QNw1gfy+Xhr/Sa9UQ+i7RMJQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4415</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/4aa773c43e1edc20c5a0a8220c5618ce</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2020-08-20T23:07:11.923</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2019-02-22T12:38:09.517</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2020-08-20T23:07:11.933</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2020-08-20T23:07:11.933</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2019-02-22T16:45:44.033</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2019-02-22T16:40:50.81</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.6')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-26T18:19:45Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.6')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.6')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.6" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.6</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-12-30T12:05:49.023</d:Created>
+      <d:Dependencies>7zip.install:[18.6]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">196657</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.6</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.6</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-12-30T12:05:49.023</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>tM6O0u1MUae0n/n3UfcyMmhxvGUWSWCjox+hmxMEAb6BOf1he/V0H4MrPCtNIZvSHpp5Z/+1sUTS9SjJxTWicA==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4415</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/3e122ff2451a0aad14b17c3c325f0550</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2019-02-02T09:34:47.063</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-12-30T12:38:03.343</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2019-02-02T09:34:47.077</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2019-02-02T09:34:47.077</d:PackageApprovedDate>
+      <d:PackageReviewer>flcdrg</d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2019-01-03T04:39:43.327</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-12-30T13:10:13.2</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.5.0.20180730')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-22T12:34:55Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.5.0.20180730')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.5.0.20180730')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.5.0.20180730" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.5.0.20180730</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-07-31T04:40:12.867</d:Created>
+      <d:Dependencies>7zip.install:[18.5.0.20180730]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">489415</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.5.0.20180730</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.5.0.20180730</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-07-31T04:40:12.867</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>BnVJ5L2ZlBHlu4BfQ5AuN8rnOkVUhrLVNcl5GJVwSuy88kTu+lfUUabugcCN4tEBwvM8uuCjjxFyFtw/FTarVg==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4428</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/9e9f60415835069531d0ef4599a75fd9</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2018-07-31T05:35:25.163</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-07-31T05:12:56.62</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2018-07-31T05:35:26.587</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2018-07-31T05:35:26.587</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2018-07-31T06:38:28.473</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-07-31T05:56:49.247</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.5')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-27T07:04:55Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.5')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.5')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.5" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.5</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-05-01T06:09:49.683</d:Created>
+      <d:Dependencies>7zip.install:[18.5]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">274024</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.5</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.5</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-05-01T06:09:49.683</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>WRXHCumB6IrgpdbURqoRePgqsqqZSA8jjEedqqKwivAOugjTTdvnjNdE64zivYtgdC8S0ehYqVHfXyWKlJ9znQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4407</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/99d97e77283567145253c64a48ba28e3</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2018-07-05T07:25:11.983</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-05-01T06:45:31.523</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2018-07-05T07:25:11.997</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2018-07-05T07:25:11.997</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2018-05-01T07:55:08.057</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-05-01T07:02:30.373</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.3-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-13T16:35:30Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.3-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.3-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.3-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.3-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-03-05T00:28:00.04</d:Created>
+      <d:Dependencies>7zip.install:[18.3-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">740</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.3-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.3-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-03-05T00:28:00.04</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>kOPDwjVFLiQSwU/YzJa/EzLyrNtIIjxEDQDp3VSJ4ziVoBNQfBsUDrhRK7KDs78C6UJTPfXolfJiH0rMGC1mTw==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4416</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/54737ca7c8929c4343ea23648ee08780</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2018-03-05T01:04:02.153</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-03-05T01:07:57.643</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-03-05T01:36:09.243</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.2-beta')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-20T12:49:53Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.2-beta')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.2-beta')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.2-beta" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.2-beta</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-03-03T18:11:23.403</d:Created>
+      <d:Dependencies>7zip.install:[18.2-beta]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">621</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.2-beta</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.2-beta</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">true</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-03-03T18:11:23.403</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>05w+kvBLIdGCGbfjBfjtioHHP8L3RcrFNK5CbdG+8JIne6Pu3RnxUn2G4bx1cVpcO+ZXunexdbBNRkS3zWEZUQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4416</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">false</d:IsApproved>
+      <d:PackageStatus>Exempted</d:PackageStatus>
+      <d:PackageSubmittedStatus>Pending</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/9f0b6e03f1658e367fc8e8bc295eb3a6</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Failing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2018-03-03T18:54:35.963</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-03-03T18:47:10.517</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime" m:null="true"></d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime" m:null="true"></d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Unknown</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime" m:null="true"></d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-03-03T19:33:24.947</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <entry>
+    <id>http://community.chocolatey.org/api/v2/Packages(Id='7zip',Version='18.1')</id>
+    <title type="text">7zip</title>
+    <summary type="text">7-Zip is a file archiver with a high compression ratio.</summary>
+    <updated>2025-09-13T16:35:30Z</updated>
+    <author>
+      <name>Igor Pavlov</name>
+    </author>
+    <link rel="edit-media" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.1')/$value" />
+    <link rel="edit" title="V2FeedPackage" href="Packages(Id='7zip',Version='18.1')" />
+    <category term="CCR.Website.V2FeedPackage" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+    <content type="application/zip" src="https://community.chocolatey.org/api/v2/package/7zip/18.1" />
+    <m:properties xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices">
+      <d:Version>18.1</d:Version>
+      <d:Title>7-Zip</d:Title>
+      <d:Description>7-Zip is a file archiver with a high compression ratio.
+
+## Features
+- High compression ratio in [7z format](http://www.7-zip.org/7z.html) with **LZMA** and **LZMA2** compression
+- Supported formats:
+- Packing / unpacking: 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM
+- Unpacking only: AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z.
+- For ZIP and GZIP formats, **7-Zip** provides a compression ratio that is 2-10 % better than the ratio provided by PKZip and WinZip
+- Strong AES-256 encryption in 7z and ZIP formats
+- Self-extracting capability for 7z format
+- Integration with Windows Shell
+- Powerful File Manager
+- Powerful command line version
+- Plugin for FAR Manager
+- Localizations for 87 languages
+
+## Notes
+- The installer for 7-Zip is known to close the explorer process.
+This means you may lose current work. If it doesn't automatically restart explorer, type `explorer` on the command shell to restart it.</d:Description>
+      <d:Tags>7zip zip archiver admin foss</d:Tags>
+      <d:Copyright></d:Copyright>
+      <d:Created m:type="Edm.DateTime">2018-01-29T18:08:41.587</d:Created>
+      <d:Dependencies>7zip.install:[18.1]:</d:Dependencies>
+      <d:DownloadCount m:type="Edm.Int32">24779330</d:DownloadCount>
+      <d:VersionDownloadCount m:type="Edm.Int32">203131</d:VersionDownloadCount>
+      <d:GalleryDetailsUrl>https://community.chocolatey.org/packages/7zip/18.1</d:GalleryDetailsUrl>
+      <d:ReportAbuseUrl>https://community.chocolatey.org/package/ReportAbuse/7zip/18.1</d:ReportAbuseUrl>
+      <d:IconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/68b91a851cee97e55c748521aa6da6211dd37c98/icons/7zip.svg</d:IconUrl>
+      <d:IsLatestVersion m:type="Edm.Boolean">false</d:IsLatestVersion>
+      <d:IsAbsoluteLatestVersion m:type="Edm.Boolean">false</d:IsAbsoluteLatestVersion>
+      <d:IsPrerelease m:type="Edm.Boolean">false</d:IsPrerelease>
+      <d:Language></d:Language>
+      <d:Published m:type="Edm.DateTime">2018-01-29T18:08:41.587</d:Published>
+      <d:LicenseUrl>http://www.7-zip.org/license.txt</d:LicenseUrl>
+      <d:RequireLicenseAcceptance m:type="Edm.Boolean">false</d:RequireLicenseAcceptance>
+      <d:PackageHash>d3iEGB+2Qe+O0B5Z02IpLTdDqDWBAwQzHjbQTegLzPZiPBN/nJwzeMQvHb5YTMmS+xnG9Joi2HnDJHuLK6kCQQ==</d:PackageHash>
+      <d:PackageHashAlgorithm>SHA512</d:PackageHashAlgorithm>
+      <d:PackageSize m:type="Edm.Int64">4407</d:PackageSize>
+      <d:ProjectUrl>http://www.7-zip.org/</d:ProjectUrl>
+      <d:ReleaseNotes>http://www.7-zip.org/history.txt</d:ReleaseNotes>
+      <d:ProjectSourceUrl></d:ProjectSourceUrl>
+      <d:PackageSourceUrl>https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/automatic/7zip</d:PackageSourceUrl>
+      <d:DocsUrl>http://www.7-zip.org/faq.html</d:DocsUrl>
+      <d:MailingListUrl>https://sourceforge.net/p/sevenzip/discussion/45797/</d:MailingListUrl>
+      <d:BugTrackerUrl>https://sourceforge.net/p/sevenzip/_list/tickets?source=navbar</d:BugTrackerUrl>
+      <d:IsApproved m:type="Edm.Boolean">true</d:IsApproved>
+      <d:PackageStatus>Approved</d:PackageStatus>
+      <d:PackageSubmittedStatus>Ready</d:PackageSubmittedStatus>
+      <d:PackageTestResultUrl>https://gist.github.com/ac97f5980a5172bd47f3f071565b1ef9</d:PackageTestResultUrl>
+      <d:PackageTestResultStatus>Passing</d:PackageTestResultStatus>
+      <d:PackageTestResultStatusDate m:type="Edm.DateTime">2018-04-05T08:01:18.21</d:PackageTestResultStatusDate>
+      <d:PackageValidationResultStatus>Passing</d:PackageValidationResultStatus>
+      <d:PackageValidationResultDate m:type="Edm.DateTime">2018-01-29T18:39:51.057</d:PackageValidationResultDate>
+      <d:PackageCleanupResultDate m:type="Edm.DateTime" m:null="true"></d:PackageCleanupResultDate>
+      <d:PackageReviewedDate m:type="Edm.DateTime">2018-04-05T08:01:18.227</d:PackageReviewedDate>
+      <d:PackageApprovedDate m:type="Edm.DateTime">2018-04-05T08:01:18.227</d:PackageApprovedDate>
+      <d:PackageReviewer></d:PackageReviewer>
+      <d:IsDownloadCacheAvailable m:type="Edm.Boolean">false</d:IsDownloadCacheAvailable>
+      <d:DownloadCacheStatus>Checked</d:DownloadCacheStatus>
+      <d:DownloadCacheDate m:type="Edm.DateTime">2018-01-29T19:50:00.37</d:DownloadCacheDate>
+      <d:DownloadCache></d:DownloadCache>
+      <d:PackageScanStatus>NotFlagged</d:PackageScanStatus>
+      <d:PackageScanResultDate m:type="Edm.DateTime">2018-02-20T22:24:17.97</d:PackageScanResultDate>
+      <d:PackageScanFlagResult>Unknown</d:PackageScanFlagResult>
+    </m:properties>
+  </entry>
+  <link rel="next" href="http://community.chocolatey.org/api/v2/Packages?$filter=tolower(Id)%20eq%20'7zip'&amp;$orderby=Version%20desc&amp;$top=30&amp;$skiptoken='18.1.0','7zip'" />
+</feed>

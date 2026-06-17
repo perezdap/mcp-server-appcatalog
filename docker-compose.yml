@@ -1,0 +1,33 @@
+services:
+  appcatalog-mcp:
+    build: .
+    container_name: appcatalog-mcp
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8010:8010"
+    environment:
+      APPCATALOG_TRANSPORT: streamable-http
+      APPCATALOG_HOST: 0.0.0.0
+      APPCATALOG_PORT: 8010
+      APPCATALOG_CACHE_DIR: /data
+      APPCATALOG_CACHE_TTL_HOURS: 6
+      # "auto" = GitHub (microsoft/winget-pkgs) first, winget.run fallback
+      APPCATALOG_WINGET_API: auto
+      APPCATALOG_CHOCO_API: https://community.chocolatey.org/api/v2/
+      # Optional: point at a separately-deployed silentinstallhq MCP server
+      APPCATALOG_SIHQ_URL: http://silentinstallhq-mcp:8000/mcp
+      APPCATALOG_REQUEST_DELAY_SECONDS: 0.5
+      APPCATALOG_LOG_LEVEL: INFO
+      # Optional: raise GitHub limit from 60 to 5000 req/hour
+      # GITHUB_TOKEN: ghp_xxx
+    volumes:
+      - appcatalog_cache:/data
+    networks:
+      - mcp
+
+volumes:
+  appcatalog_cache:
+
+networks:
+  mcp:
+    external: false
