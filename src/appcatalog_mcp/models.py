@@ -173,3 +173,29 @@ class FindBestSourceResult(BaseModel):
     best_score: int = 0
     candidates: list[CandidateScore] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)
+
+
+class HashVerification(BaseModel):
+    """Result of streaming a download URL and computing its SHA256.
+
+    Used by ``verify_hash`` to confirm that an installer URL actually returns
+    the bytes whose hash a manifest claims. The download is streamed and hashed
+    incrementally (never written to disk, never cached) and capped at
+    ``max_bytes`` to avoid pulling multi-GB files by accident.
+    """
+
+    url: str
+    expected_sha256: str
+    computed_sha256: str | None = Field(
+        default=None, description="SHA256 of the bytes read (None on fetch failure)"
+    )
+    match: bool = Field(
+        default=False, description="True only when the full download hash equals expected"
+    )
+    bytes_read: int = Field(default=0, description="Bytes streamed before completion or cap")
+    elapsed_ms: int = Field(default=0)
+    status_code: int = Field(default=0, description="HTTP status, 0 if the request never started")
+    error: str | None = Field(
+        default=None,
+        description="'size_limit_exceeded' when capped, or the fetch error message",
+    )

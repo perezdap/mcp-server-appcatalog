@@ -22,7 +22,7 @@ uv run appcatalog-mcp --transport stdio
 ## Features
 
 - **FastMCP** server using the official [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk).
-- **8 tools**: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `find_best_source`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`.
+- **9 tools**: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `find_best_source`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`, `verify_hash`.
 - **Source adapters** with a uniform `PackageAdapter` ABC: add a new source by implementing `search` / `get_package` / `list_recent` / `normalize`.
 - **Chocolatey ``.nupkg`` parsing** — downloads the package zip in memory and parses ``tools/chocolateyInstall.ps1`` to surface the real per-arch installer URLs + SHA256 hashes + silent args that the OData feed hides. Cross-source SHA256 agreement (e.g., Chocolatey's googlechrome x86 hash == winget's Google.Chrome x86 hash) is verifiable.
 - **SQLite TTL cache** (default 6h) for both raw API responses and normalized records.
@@ -93,6 +93,7 @@ class InstallerInfo(BaseModel):
 | `list_recent` | `limit=10, source=None` | Recently updated packages across sources |
 | `get_silent_switches` | `package_id, source="winget"` | Silent install/uninstall switches; falls back to SIHQ if absent |
 | `get_changelog_or_releasenotes` | `package_id, source=None` | Release notes URL/text |
+| `verify_hash` | `url, expected_sha256, max_bytes=None` | Streams the URL and computes its SHA256 to prove a download matches an expected hash. http/https only, best-effort SSRF guard against private/loopback hosts (redirect-aware; see note below); never written to disk, never cached, capped at `APPCATALOG_VERIFY_MAX_BYTES` (default 500 MB) |
 
 ## Example tool calls
 
@@ -156,6 +157,8 @@ All settings use the `APPCATALOG_` prefix (`GITHUB_TOKEN` is the one exception).
 | `APPCATALOG_EVERGREEN_API` | `https://evergreen-api.stealthpuppy.com` | Evergreen REST API base URL |
 | `APPCATALOG_SIHQ_URL` | `http://127.0.0.1:8000/mcp` | Silent Install HQ MCP endpoint; empty = disabled |
 | `APPCATALOG_REQUEST_DELAY_SECONDS` | `0.5` | Minimum delay between outbound requests |
+| `APPCATALOG_VERIFY_MAX_BYTES` | `524288000` | `verify_hash` streaming download cap (500 MB) |
+| `APPCATALOG_VERIFY_BLOCK_PRIVATE_HOSTS` | `true` | Best-effort `verify_hash` SSRF guard: rejects URLs (and redirect hops) whose hostname resolves to loopback/private/link-local/reserved IPs. Validation and connection use separate DNS lookups, so it is not rebind-proof — keep this server behind a trusted agent; set `false` only for internal-only deployments |
 | `APPCATALOG_USER_AGENT` | project default | Outbound User-Agent |
 | `APPCATALOG_LOG_LEVEL` | `INFO` | Logging level |
 
@@ -225,7 +228,7 @@ MCPJungle registration:
 1. Run the container (or local process) on port `8010`.
 2. Put nginx in front with TLS (Cloudflare Zero Trust / Authentik as needed).
 3. In MCPJungle, register: **Name** `appcatalog`, **Transport** `streamable-http`, **URL** `https://mcp.yourdomain.example/mcp`.
-4. Confirm all 7 tools appear: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`.
+4. Confirm all 9 tools appear: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `find_best_source`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`, `verify_hash`.
 
 Example nginx location:
 

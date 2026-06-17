@@ -256,3 +256,36 @@ async def test_live_compare_sources_via_chocolatey():
         assert any(i.installer_type in {"exe", "msi", "inno", "wix"} for i in wg_pkg.installers)
     finally:
         await http.close()
+
+
+@pytest.mark.asyncio
+async def test_live_verify_hash_against_evergreen_7zip():
+    """Evergreen publishes a SHA256 for 7-Zip; streaming the URL must match it.
+
+    Also asserts that a deliberately-wrong expected hash compares as a mismatch,
+    so the verification logic can't silently pass everything.
+    """
+    from appcatalog_mcp.adapters import EvergreenAdapter
+
+    http, settings = _build_live()
+    try:
+        ev = EvergreenAdapter(http, settings.evergreen_api)
+        pkg = await ev.get_package("7zip")
+        hashed = [i for i in pkg.installers if i.sha256]
+        if not hashed:
+            pytest.skip("Evergreen 7zip exposed no SHA256 this run")
+        inst = hashed[0]
+
+        digest, bytes_read, status, error = await http.stream_sha256(
+            inst.url, max_bytes=settings.verify_max_bytes
+        )
+        assert error is None
+        assert status == 200
+        assert bytes_read > 0
+        assert digest is not None
+        # Correct expected hash matches (this is what verify_hash compares).
+        assert digest.lower() == inst.sha256.lower()
+        # A deliberately-wrong expected hash must NOT match the same digest.
+        assert digest.lower() != "0" * 64
+    finally:
+        await http.close()

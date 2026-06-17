@@ -68,10 +68,16 @@ src/appcatalog_mcp/
 │   └── sihq_adapter.py      # MCP client delegation to silentinstallhq
 ├── models.py                # Normalized Pydantic models (PackageMetadata etc.)
 ├── cache.py                 # SQLite TTL cache
-├── http_client.py           # httpx + cache + rate limiter + fetch_bytes/zip_member
+├── http_client.py           # httpx + cache + rate limiter + fetch_bytes/zip_member + stream_sha256
 ├── rate_limiter.py          # asyncio pacing
 └── config.py                # env-driven settings (APPCATALOG_*)
 ```
+
+`scripts/probe_sources.py` hits each upstream endpoint live and prints its
+response shape (status, content-type, rate-limit headers, sample). Run it before
+trusting any adapter against an assumed API shape; the verified ground truth
+lives in `docs/sources.md`. Regenerate both together when an upstream schema
+changes: `uv run python scripts/probe_sources.py`.
 
 ## MCP tools
 
@@ -85,6 +91,7 @@ src/appcatalog_mcp/
 | `list_recent` | Recently updated packages |
 | `get_silent_switches` | Silent install switches (winget manifest → SIHQ fallback) |
 | `get_changelog_or_releasenotes` | Release notes URL/text from manifest or OData |
+| `verify_hash` | Streams a download URL and computes its SHA256 to prove it matches an expected hash. http/https only, best-effort SSRF guard against private/loopback hosts (redirect-aware, not DNS-rebind-proof — trusted-agent deployments only); never written to disk, never cached, capped at `APPCATALOG_VERIFY_MAX_BYTES` (default 500 MB) |
 
 ## Adapter contract
 

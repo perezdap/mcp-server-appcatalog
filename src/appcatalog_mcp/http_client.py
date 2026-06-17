@@ -4,7 +4,10 @@ from __future__ import annotations
 
 import io
 import logging
+import socket
+from ipaddress import ip_address
 from typing import Any
+from urllib.parse import urlsplit
 
 import httpx
 
@@ -13,6 +16,42 @@ from appcatalog_mcp.config import Settings
 from appcatalog_mcp.rate_limiter import RateLimiter
 
 logger = logging.getLogger(__name__)
+
+
+class SsrfBlockedError(Exception):
+    """Raised when a verify_hash target resolves to a disallowed (private) host."""
+
+
+def _host_is_blocked(host: str) -> bool:
+    """Return True if a hostname resolves to a loopback/private/link-local/reserved IP.
+
+    Resolves every A/AAAA record and blocks if ANY of them is non-public, so an
+    attacker can't smuggle an internal target behind a name with mixed records.
+    """
+    if not host:
+        return True
+    try:
+        infos = socket.getaddrinfo(host, None)
+    except OSError:
+        # Unresolvable host: let the actual request fail with a normal error
+        # rather than masking it as an SSRF block.
+        return False
+    for info in infos:
+        sockaddr = info[4]
+        try:
+            ip = ip_address(sockaddr[0])
+        except ValueError:
+            continue
+        if (
+            ip.is_loopback
+            or ip.is_private
+            or ip.is_link_local
+            or ip.is_reserved
+            or ip.is_multicast
+            or ip.is_unspecified
+        ):
+            return True
+    return False
 
 
 class HttpClientError(Exception):
@@ -215,3 +254,68 @@ class HttpClient:
                 return zf.read(member_path)
             except KeyError as exc:
                 raise HttpClientError(f"Member {member_path!r} not found in {url}") from exc
+
+    async def stream_sha256(
+        self,
+        url: str,
+        *,
+        max_bytes: int,
+        headers: dict[str, str] | None = None,
+        block_private_hosts: bool = True,
+        max_redirects: int = 10,
+    ) -> tuple[str | None, int, int, str | None]:
+        """Stream a URL and compute its SHA256 incrementally without caching.
+
+        Returns ``(hex_digest, bytes_read, status_code, error)``. ``hex_digest``
+        is ``None`` when the download failed or exceeded ``max_bytes`` (error
+        ``"size_limit_exceeded"``). The body is never written to disk and never
+        cached — hash verification must always hit the live URL.
+
+        When ``block_private_hosts`` is True (default), redirects are followed
+        manually and each hop's hostname is resolved and checked; a target that
+        resolves to a loopback/private/link-local/reserved address returns error
+        ``"blocked_private_host"`` (SSRF guard). This is why redirects can't be
+        delegated to httpx here — each hop must be re-validated.
+
+        Note: the guard resolves the host to validate it, then httpx resolves it
+        again at connect time, so a hostname with attacker-controlled DNS could
+        in principle rebind between the two lookups (DNS-rebinding TOCTOU). This
+        is an accepted residual gap — the guard blocks the common cases (direct
+        private-IP URLs and redirects to private hosts) and this server is meant
+        for trusted local agents. Pinning the vetted IP into the connection
+        would require a custom transport and is intentionally not done here.
+        ``getaddrinfo`` is also synchronous and briefly blocks the event loop
+        per hop, which is acceptable for this low-frequency tool.
+        """
+        import hashlib
+
+        await self.rate_limiter.acquire()
+        logger.info("HTTP STREAM %s (max_bytes=%d)", url, max_bytes)
+        hasher = hashlib.sha256()
+        bytes_read = 0
+        current = url
+        try:
+            for _ in range(max_redirects + 1):
+                if block_private_hosts and _host_is_blocked(urlsplit(current).hostname or ""):
+                    return None, 0, 0, "blocked_private_host"
+                async with self._client.stream(
+                    "GET", current, headers=headers or None, follow_redirects=False
+                ) as response:
+                    status = response.status_code
+                    if status in (301, 302, 303, 307, 308):
+                        location = response.headers.get("location")
+                        if not location:
+                            return None, 0, status, f"HTTP {status} redirect without Location"
+                        current = str(httpx.URL(current).join(location))
+                        continue
+                    if status >= 400:
+                        return None, 0, status, f"HTTP {status}"
+                    async for chunk in response.aiter_bytes():
+                        bytes_read += len(chunk)
+                        if bytes_read > max_bytes:
+                            return None, bytes_read, status, "size_limit_exceeded"
+                        hasher.update(chunk)
+                    return hasher.hexdigest(), bytes_read, status, None
+            return None, bytes_read, 0, "too_many_redirects"
+        except httpx.HTTPError as exc:
+            return None, bytes_read, 0, f"Request failed for {current}: {exc}"

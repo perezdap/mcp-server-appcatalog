@@ -19,6 +19,7 @@ from appcatalog_mcp.http_client import HttpClient, HttpClientError
 from appcatalog_mcp.models import (
     CompareResult,
     FindBestSourceResult,
+    HashVerification,
     InstallerMetadata,
     PackageMetadata,
     RecentResult,
@@ -180,6 +181,17 @@ def _score_package(pkg: PackageMetadata) -> tuple[int, list[str]]:
         reasons.append("winget manifests preferred for Intune packaging")
 
     return score, reasons
+
+
+def _hash_matches(expected_sha256: str, computed_sha256: str | None) -> bool:
+    """Case-insensitive SHA256 equality used by ``verify_hash``.
+
+    Returns False when nothing was computed (fetch failed / size cap hit) so a
+    failed download can never be reported as a match.
+    """
+    if not computed_sha256:
+        return False
+    return computed_sha256.strip().lower() == expected_sha256.strip().lower()
 
 
 # ---------------------------------------------------------------------------
@@ -587,3 +599,71 @@ def register_tools(mcp: FastMCP) -> None:
             "release_notes_url": pkg.release_notes_url,
             "release_notes": pkg.release_notes,
         }
+
+    # -------------------------------------------------------------------------
+    @mcp.tool()
+    async def verify_hash(
+        ctx: Context,
+        url: str,
+        expected_sha256: str,
+        max_bytes: int | None = None,
+    ) -> HashVerification:
+        """Stream a download URL and confirm its SHA256 matches an expected value.
+
+        Use this to prove that an installer URL actually returns the bytes whose
+        hash a manifest claims, before trusting it for packaging. The download is
+        streamed and hashed incrementally — it is never written to disk and never
+        cached, so every call hits the live URL.
+
+        The download is capped at ``max_bytes`` (default from
+        ``APPCATALOG_VERIFY_MAX_BYTES``, 500 MB) to avoid accidentally pulling a
+        multi-GB file; if the cap is hit, ``match`` is False and ``error`` is
+        ``"size_limit_exceeded"``. Only ``http``/``https`` URLs are fetched;
+        other schemes return ``match=False`` with an ``unsupported_url_scheme``
+        error.
+
+        Args:
+            url: direct installer download URL to fetch.
+            expected_sha256: the SHA256 hex digest you expect (case-insensitive).
+            max_bytes: optional override of the per-call download cap in bytes.
+
+        Examples:
+            verify_hash(url="https://.../app.msi", expected_sha256="AB12...")
+        """
+        import time
+
+        settings = _settings(ctx)
+        cap = max_bytes if max_bytes and max_bytes > 0 else settings.verify_max_bytes
+        expected_norm = expected_sha256.strip().lower()
+
+        # Only fetch http(s). verify_hash is the one tool that takes a fully
+        # caller-controlled URL, so reject other schemes (file://, ftp://, etc.)
+        # to avoid turning the server into an arbitrary-scheme fetcher.
+        scheme = url.split("://", 1)[0].lower() if "://" in url else ""
+        if scheme not in ("http", "https"):
+            return HashVerification(
+                url=url,
+                expected_sha256=expected_norm,
+                computed_sha256=None,
+                match=False,
+                error="unsupported_url_scheme (only http/https allowed)",
+            )
+
+        start = time.monotonic()
+        digest, bytes_read, status, error = await _http(ctx).stream_sha256(
+            url,
+            max_bytes=cap,
+            block_private_hosts=settings.verify_block_private_hosts,
+        )
+        elapsed_ms = int((time.monotonic() - start) * 1000)
+
+        return HashVerification(
+            url=url,
+            expected_sha256=expected_norm,
+            computed_sha256=digest,
+            match=_hash_matches(expected_norm, digest),
+            bytes_read=bytes_read,
+            elapsed_ms=elapsed_ms,
+            status_code=status,
+            error=error,
+        )

@@ -52,6 +52,13 @@ class Settings(BaseSettings):
     httpx_max_connections: int = Field(default=10)
     httpx_max_keepalive_connections: int = Field(default=4)
 
+    # verify_hash streaming download cap (default 500 MB). Prevents an agent
+    # from accidentally pulling a multi-GB file while checking a hash.
+    verify_max_bytes: int = Field(default=500 * 1024 * 1024)
+    # Block verify_hash from fetching loopback/private/link-local/reserved hosts
+    # (SSRF guard). Disable only for trusted internal-only deployments.
+    verify_block_private_hosts: bool = Field(default=True)
+
     # Logging
     log_level: str = Field(default="INFO")
 
