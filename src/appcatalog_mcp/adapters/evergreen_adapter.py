@@ -50,34 +50,66 @@ logger = logging.getLogger(__name__)
 
 
 def _parse_evergreen_date(date_str: str | None) -> datetime | None:
-    """Evergreen dates are DD/MM/YYYY; tolerate ISO and dash formats."""
+    """Parse an Evergreen ``Date`` field.
+
+    Evergreen feeds mix formats per app:
+    - ``27/4/2026``  — 7-Zip (DD/MM/YYYY, vendor=GitHub)
+    - ``2026-06-16T17:58:00`` — Microsoft Edge (ISO with time)
+    - ``2026-06-16`` or ``27-04-2026`` — occasional fallbacks
+    """
     if not date_str:
         return None
-    for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"):
+    raw = date_str.strip()
+    # Fast path: ISO datetime / date. ``datetime.fromisoformat`` parses
+    # ``2026-06-16T17:58:00`` and ``2026-06-16`` directly.
+    try:
+        return datetime.fromisoformat(raw)
+    except ValueError:
+        pass
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y %H:%M:%S"):
         try:
-            return datetime.strptime(date_str.strip(), fmt)
+            return datetime.strptime(raw, fmt)
         except ValueError:
             continue
     return None
 
 
-def _latest_rows(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Pick the rows belonging to the *latest* version in an /app/{name} response."""
+def _latest_rows(
+    entries: list[dict[str, Any]], *, prefer_channel: str = "Stable"
+) -> list[dict[str, Any]]:
+    """Pick the rows belonging to the *latest* version in an /app/{name} response.
+
+    Evergreen's per-app response aggregates every published channel (Stable,
+    Beta, Dev, Canary, …) for some apps (e.g. Microsoft Edge). Packaging tools
+    almost always want the Stable channel by default — picking "Beta/Dev" just
+    because its Date is newer would be misleading for ``find_best_source``
+    comparisons against winget/Chocolatey which default to the stable
+    published version. We prefer ``prefer_channel`` if any rows share it,
+    then pick the newest-by-Date version from that subset; otherwise fall back
+    to the newest Date across all entries.
+    """
     if not entries:
         return []
 
     def sort_key(row: dict[str, Any]) -> tuple[int, str]:
-        # Most recent Date wins; tie-break on Version string so we don't pick
-        # a Beta/Dev channel row just because it sorts after a Stable one.
+        # Most recent Date wins; tie-break on Version string so ties resolve
+        # deterministically rather than by dict iteration order.
         date_obj = _parse_evergreen_date(row.get("Date"))
         date_rank = int(date_obj.timestamp()) if date_obj else 0
         return (date_rank, str(row.get("Version") or ""))
 
-    rows = list(entries)
-    best = max(rows, key=sort_key)
+    filtered = entries
+    if prefer_channel:
+        targeted = [
+            r for r in entries
+            if str(r.get("Channel", "")).strip().lower() == prefer_channel.lower()
+        ]
+        if targeted:
+            filtered = targeted
+
+    best = max(filtered, key=sort_key)
     best_version = str(best.get("Version") or "")
-    # Return every row of that latest version — multi-arch installers share it.
-    return [r for r in rows if str(r.get("Version") or "") == best_version]
+    return [r for r in filtered if str(r.get("Version") or "") == best_version]
 
 
 def _normalize_arch(arch: str | None) -> str:
@@ -95,6 +127,28 @@ def _normalize_arch(arch: str | None) -> str:
         "": "neutral",
     }
     return canonical.get(a.lower(), a.lower())
+
+
+def _case_insensitive_get(row: dict[str, Any], keys: tuple[str, ...]) -> Any | None:
+    """Return the first non-empty value among ``keys`` in ``row`` (case-insensitive).
+
+    Evergreen's API emits different key casings per app: 7-Zip rows use
+    ``Sha256`` while Microsoft Edge rows use ``SHA256``. A plain
+    ``row.get("Sha256")`` lookup misses the Edge casing and silently drops
+    the losslessly-vendor-published hash, skewing the ``find_best_source``
+    score. We fall back to a full case-insensitive scan over ``row`` if none
+    of the listed keys match exactly.
+    """
+    for k in keys:
+        if k in row:
+            v = row[k]
+            if v not in (None, ""):
+                return v
+    lowered_targets = {k.lower() for k in keys}
+    for k, v in row.items():
+        if k.lower() in lowered_targets and v not in (None, ""):
+            return v
+    return None
 
 
 class EvergreenAdapter(PackageAdapter):
@@ -275,7 +329,10 @@ class EvergreenAdapter(PackageAdapter):
         releases: set[str] = set()
         latest_date: str | None = None
         for row in rows:
-            sha = (row.get("Sha256") or row.get("Hash"))
+            # Evergreen API is inconsistent about the SHA256 key casing per app:
+            # 7-Zip emits ``Sha256``, Microsoft Edge emits ``SHA256`` (all caps).
+            # Use a case-insensitive lookup so we never drop a published hash.
+            sha = _case_insensitive_get(row, ("SHA256", "Sha256", "sha256", "Hash"))
             if isinstance(sha, str):
                 sha = sha.lower() or None
             uri = row.get("URI") or row.get("Url")

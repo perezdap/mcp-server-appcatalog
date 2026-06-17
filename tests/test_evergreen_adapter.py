@@ -58,6 +58,21 @@ def test_parse_evergreen_date_eu_format():
     assert _parse_evergreen_date("garbage") is None
 
 
+def test_parse_evergreen_date_iso_datetime():
+    """Microsoft Edge's Evergreen feed returns ISO datetimes with a time
+    component (``2026-06-16T17:58:00``); the parser must convert them.
+
+    Regression: before this fix the time component made ``strptime('%Y-%m-%d')``
+    raise ``ValueError`` and every Edge row parsed to ``None``, which silently
+    broke latest-version selection (it fell back to lexicographic Version
+    sort and picked a Dev release over Stable).
+    """
+    parsed = _parse_evergreen_date("2026-06-16T17:58:00")
+    assert parsed is not None
+    assert parsed.year == 2026 and parsed.month == 6 and parsed.day == 16
+    assert parsed.hour == 17 and parsed.minute == 58
+
+
 def test_normalize_arch_canonicalises_variants():
     assert _normalize_arch("x86_64") == "x64"
     assert _normalize_arch("AMD64") == "x64"
@@ -68,19 +83,49 @@ def test_normalize_arch_canonicalises_variants():
 
 
 def test_latest_rows_picks_most_recent_version():
+    """``_latest_rows`` narrows to the most recent Date within the
+    Stable channel (Edge's Beta/Dev rows have newer Dates but should NOT win
+    by default)."""
     rows = _read_json("evergreen_app_MicrosoftEdge.json")
     latest = _latest_rows(rows)
-    # Should narrow to a single most-recent Version across all entries.
+    # All selected rows share one Version.
     versions = {r["Version"] for r in latest}
     assert len(versions) == 1, "all latest rows must share the same Version"
     best_version = next(iter(versions))
-    # And that version is the newest by Date.
-    assert best_version == max(
+    # And that version is the newest by Date within the Stable subset.
+    stable_rows = [r for r in rows if r.get("Channel") == "Stable"]
+    expected = max(
+        (r["Version"] for r in stable_rows),
+        key=lambda v: _parse_evergreen_date(
+            next((r["Date"] for r in stable_rows if r["Version"] == v), None)
+        ) or datetime.min,
+    )
+    assert best_version == expected
+    # And it correctly differs from the Beta/Dev version (which is newer by Date).
+    all_rows_best = max(
         (r["Version"] for r in rows),
         key=lambda v: _parse_evergreen_date(
             next((r["Date"] for r in rows if r["Version"] == v), None)
         ) or datetime.min,
     )
+    assert best_version != all_rows_best, (
+        "Stable should win over Beta/Dev even though Dev has a newer Date"
+    )
+
+
+def test_latest_rows_prefers_stable_channel():
+    """Microsoft Edge's Evergreen feed includes Beta/Dev builds that are newer
+    by Date than Stable. For packaging use, default to the Stable channel so
+    ``find_best_source`` ranks Evergreen honestly against winget/chocolatey
+    which default to stable-published versions."""
+    rows = _read_json("evergreen_app_MicrosoftEdge.json")
+    latest = _latest_rows(rows)
+    chosen_channel = next((r.get("Channel") for r in latest if r.get("Channel")), None)
+    assert chosen_channel == "Stable", (
+        f"expected Stable channel to win by default, got {chosen_channel!r}"
+    )
+    # All selected rows should share the Stable version.
+    assert len({r["Version"] for r in latest}) == 1
 
 
 def test_latest_rows_empty_input():
@@ -106,6 +151,12 @@ def test_normalize_full_microsoftedge_payload():
     for inst in pkg.installers:
         assert inst.installer_type == "msi"
         assert inst.url  # vendor URI present
+    # Regression: Edge rows use ``SHA256`` (all caps) for the hash key; the
+    # case-insensitive lookup must surface the vendor-published SHA256.
+    assert any(i.sha256 for i in pkg.installers), (
+        "Edge rows have a SHA256 in the 'SHA256' key; "
+        "the case-insensitive lookup must surface it"
+    )
     assert pkg.gallery_url == "https://stealthpuppy.com/apptracker/"
     assert pkg.raw_data["vendor_source"] is True
 
