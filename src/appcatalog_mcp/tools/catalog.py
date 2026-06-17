@@ -9,6 +9,7 @@ from mcp.server.fastmcp import Context, FastMCP
 
 from appcatalog_mcp.adapters import (
     ChocolateyAdapter,
+    EvergreenAdapter,
     PackageNotFoundError,
     SihqAdapter,
     WingetAdapter,
@@ -17,6 +18,7 @@ from appcatalog_mcp.config import Settings
 from appcatalog_mcp.http_client import HttpClient, HttpClientError
 from appcatalog_mcp.models import (
     CompareResult,
+    FindBestSourceResult,
     InstallerMetadata,
     PackageMetadata,
     RecentResult,
@@ -26,7 +28,7 @@ from appcatalog_mcp.models import (
 
 logger = logging.getLogger(__name__)
 
-VALID_SOURCES = ("winget", "chocolatey", "silentinstallhq")
+VALID_SOURCES = ("winget", "chocolatey", "silentinstallhq", "evergreen")
 
 
 def _http(ctx: Context) -> HttpClient:
@@ -49,12 +51,18 @@ def _choco(ctx: Context) -> ChocolateyAdapter:
     return ctx.request_context.lifespan_context["chocolatey"]
 
 
+def _evergreen(ctx: Context) -> EvergreenAdapter:
+    return ctx.request_context.lifespan_context["evergreen"]
+
+
 def _adapter_for(ctx: Context, source: str):
     source = source.lower()
     if source == "winget":
         return _winget(ctx)
     if source == "chocolatey":
         return _choco(ctx)
+    if source == "evergreen":
+        return _evergreen(ctx)
     if source == "silentinstallhq":
         return _sihq(ctx)
     raise ValueError(f"Unknown source {source!r}. Valid: {VALID_SOURCES}")
@@ -68,9 +76,110 @@ def _normalize_sources(sources: list[str] | None) -> list[str]:
         s = s.strip().lower()
         if s not in VALID_SOURCES:
             raise ValueError(f"Unknown source {s!r}. Valid: {VALID_SOURCES}")
-        if s not in (out):
+        if s not in out:
             out.append(s)
     return out
+
+
+# Candidate id forms to try against Chocolatey/Evergreen when the caller passes
+# a winget-style ``Publisher.Package`` id. Chocolatey uses lowercased ids like
+# ``googlechrome`` / ``7zip`` while winget uses ``Google.Chrome`` /
+# ``7zip.7zip``. Evergreen uses PascalCase names like ``MicrosoftEdge`` / ``7zip``.
+def _cross_source_id_candidates(package_id: str) -> list[str]:
+    """Return distinct id spellings to try against Chocolatey/Evergreen.
+
+    Order matters: try the most-likely form first so we avoid extra API calls.
+    """
+    candidates = [package_id]
+    if "." in package_id:
+        segments = package_id.split(".")
+        # full id lowercased and dot-stripped (choco ``googlechrome`` / evergreen ``googlechrome``)
+        joined = package_id.lower().replace(".", "")
+        candidates.append(joined)
+        # last segment lowercased (``7zip.7zip`` → ``7zip``)
+        candidates.append(segments[-1].lower())
+        # Title-cased last segment for Evergreen PascalCase names
+        candidates.append(segments[-1][:1].upper() + segments[-1][1:])
+        # ``Microsoft.VisualStudio.2022.Community`` → title-case of last-2 segs
+        if len(segments) >= 2:
+            joined_last_two = "".join(segments[-2:])
+            candidates.append(joined_last_two.lower())
+            candidates.append(joined_last_two[:1].upper() + joined_last_two[1:])
+    # Deduplicate preserving order and casing. EVERGREEN endpoints are
+    # case-sensitive (``/app/MicrosoftEdge`` is not ``/app/microsoftedge``),
+    # so we must NOT collapse ``Chrome`` and ``chrome`` — they may route to
+    # different API responses.
+    seen: set[str] = set()
+    out: list[str] = []
+    for c in candidates:
+        if c and c not in seen:
+            seen.add(c)
+            out.append(c)
+    return out
+
+
+def _score_package(pkg: PackageMetadata) -> tuple[int, list[str]]:
+    """Return a heuristic packaging-score for a normalized PackageMetadata.
+
+    Higher = better for a packaging agent. Encodes what's actually useful when
+    building Intune/PSADT packages: real installer URLs with verifiable SHA256,
+    MSI product/upgrade codes for detection, silent switches, and release notes.
+    """
+    score = 0
+    reasons: list[str] = []
+    installers = pkg.installers or []
+
+    if installers:
+        score += 3
+        reasons.append(f"{len(installers)} installer(s)")
+    installer_bonus = min(len(installers), 5)
+    score += installer_bonus
+
+    has_sha = [i for i in installers if i.sha256]
+    if has_sha:
+        score += 3
+        score += min(len(has_sha), 6) // 2  # +1 per 2 hashed installers, cap 3
+        reasons.append(f"{len(has_sha)} installer(s) with SHA256")
+
+    has_silent = [i for i in installers if i.silent_switch]
+    if has_silent:
+        score += 2
+        reasons.append("silent install switch present")
+
+    has_product_code = [i for i in installers if i.product_code]
+    if has_product_code:
+        score += 3
+        reasons.append(f"{len(has_product_code)} MSI product code(s) for detection")
+
+    has_upgrade_code = [i for i in installers if i.upgrade_code]
+    if has_upgrade_code:
+        score += 1
+        reasons.append("MSI upgrade code(s) for supersedence")
+
+    if pkg.homepage:
+        score += 1
+        reasons.append("homepage known")
+
+    if pkg.release_notes_url:
+        score += 1
+        reasons.append("release notes URL")
+
+    if pkg.license:
+        score += 1
+        reasons.append("license known")
+
+    # Freshness bonus: Evergreen fetches live from the vendor.
+    if pkg.source == "evergreen":
+        score += 2
+        reasons.append("vendor-direct freshness (Evergreen)")
+
+    # winget gets a small tie-break advantage for windows-desktop packaging
+    # because its manifests also surface UpgradeBehavior and direct MSI URLs.
+    if pkg.source == "winget" and installers:
+        score += 1
+        reasons.append("winget manifests preferred for Intune packaging")
+
+    return score, reasons
 
 
 # ---------------------------------------------------------------------------
@@ -259,6 +368,103 @@ def register_tools(mcp: FastMCP) -> None:
                 "winget": winget_pkg,
                 "chocolatey": choco_pkg,
             },
+            notes=notes,
+        )
+
+    # -------------------------------------------------------------------------
+    @mcp.tool()
+    async def find_best_source(ctx: Context, package_id: str) -> FindBestSourceResult:
+        """Recommend the single best source for packaging an application.
+
+        Tries winget, Chocolatey, and Evergreen in parallel. For Chocolatey
+        and Evergreen, also tries common id-translation spellings (e.g. winget
+        ``Google.Chrome`` → choco ``googlechrome``; ``7zip.7zip`` → ``7zip``).
+
+        Ranks each successfully-resolved package on:
+        - presence of installer URLs with SHA256 hashes (+3 and extras)
+        - silent install switches on any installer (+2)
+        - MSI product/upgrade codes (+3 / +1, valuable for Intune detection)
+        - homepage / license / release notes URL (small bonuses)
+        - a small Evergreen freshness bonus (vendor-direct data) and a small
+          winget preference for Win32 Intune packaging workflow.
+
+        Returns the highest-scoring source plus the per-source score breakdown
+        and reasons. Use this to choose between sources before calling
+        ``get_installer_metadata`` or ``generate_psadt_wrapper``.
+
+        Args:
+            package_id: ``Publisher.Package`` (winget) works best; the same id
+                is also tried against Chocolatey/Evergreen via spelling fallback.
+        """
+        import asyncio
+
+        from appcatalog_mcp.models import CandidateScore
+
+        async def _try_winget() -> CandidateScore:
+            try:
+                pkg = await _winget(ctx).get_package(package_id)
+                score, reasons = _score_package(pkg)
+                return CandidateScore(
+                    source="winget", package=pkg, score=score, reasons=reasons
+                )
+            except (PackageNotFoundError, HttpClientError) as exc:
+                return CandidateScore(source="winget", error=str(exc))
+
+        async def _try_choco() -> CandidateScore:
+            adapter = _choco(ctx)
+            last_err: str | None = None
+            for candidate in _cross_source_id_candidates(package_id):
+                try:
+                    pkg = await adapter.get_installer_detail(candidate)
+                except (PackageNotFoundError, HttpClientError) as exc:
+                    last_err = str(exc)
+                    continue
+                score, reasons = _score_package(pkg)
+                reasons.append(f"chocolatey id matched as {candidate!r}")
+                return CandidateScore(
+                    source="chocolatey", package=pkg, score=score, reasons=reasons
+                )
+            return CandidateScore(source="chocolatey", error=last_err or "not found")
+
+        async def _try_evergreen() -> CandidateScore:
+            adapter = _evergreen(ctx)
+            last_err: str | None = None
+            for candidate in _cross_source_id_candidates(package_id):
+                try:
+                    pkg = await adapter.get_package(candidate)
+                except (PackageNotFoundError, HttpClientError) as exc:
+                    last_err = str(exc)
+                    continue
+                score, reasons = _score_package(pkg)
+                reasons.append(f"evergreen app matched as {candidate!r}")
+                return CandidateScore(
+                    source="evergreen", package=pkg, score=score, reasons=reasons
+                )
+            return CandidateScore(source="evergreen", error=last_err or "not found")
+
+        winget_c, choco_c, evergreen_c = await asyncio.gather(
+            _try_winget(), _try_choco(), _try_evergreen()
+        )
+        candidates = [winget_c, choco_c, evergreen_c]
+        best = max(candidates, key=lambda c: c.score, default=None)
+        notes: list[str] = []
+        if best and best.package is not None:
+            notes.append(
+                f"Best source: {best.source} (score {best.score}) — "
+                + "; ".join(best.reasons)
+            )
+        else:
+            notes.append("No source resolved this package id.")
+        for c in candidates:
+            if c.package is None and c.error:
+                notes.append(f"{c.source}: unavailable ({c.error})")
+
+        return FindBestSourceResult(
+            package_id=package_id,
+            best_source=best.source if best and best.package is not None else None,
+            best_package=best.package if best and best.package is not None else None,
+            best_score=best.score if best else 0,
+            candidates=candidates,
             notes=notes,
         )
 

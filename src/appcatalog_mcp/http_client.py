@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import io
 import logging
 from typing import Any
 
@@ -148,3 +149,69 @@ class HttpClient:
 
     def get_cache(self, key: str) -> Any | None:
         return self.cache.get(key)
+
+    async def fetch_bytes(
+        self,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        cache_key: str | None = None,
+        use_cache: bool = True,
+    ) -> tuple[bytes, bool]:
+        """Return raw response bytes (used for binary downloads like .nupkg).
+
+        Bytes are cached too, but callers should set a longer-lived cache key
+        via ``cache_key`` and be mindful that large binaries bloat the SQLite DB.
+        Returns ``(payload, cache_hit)``.
+        """
+        key = cache_key or f"bytes:{url}"
+        if use_cache:
+            cached = self.cache.get(key)
+            if cached is not None:
+                # Cache stores JSON; bytes round-trip via latin-1 codec so the
+                # payload survives ``json.dumps`` losslessly.
+                if isinstance(cached, str):
+                    return cached.encode("latin-1"), True
+                if isinstance(cached, (bytes, bytearray)):
+                    return bytes(cached), True
+
+        response = await self._request(url, headers=headers or None)
+        data = response.content
+        if use_cache:
+            try:
+                self.cache.set(key, data.decode("latin-1"))
+            except (UnicodeDecodeError, ValueError):
+                # Extremely unlikely given latin-1 maps every byte 0x00-0xff;
+                # if it ever fails we just skip caching for this payload.
+                self.cache.delete(key)
+        return data, False
+
+    async def fetch_zip_member(
+        self,
+        url: str,
+        member_path: str,
+        *,
+        headers: dict[str, str] | None = None,
+        cache_key: str | None = None,
+        use_cache: bool = True,
+    ) -> bytes:
+        """Fetch a zip archive over HTTP and read a single member without writing to disk.
+
+        Used for Chocolatey ``.nupkg`` inspection: download the zip, open in
+        memory with :mod:`zipfile`, return the named member's bytes. The full
+        .nupkg is cached under ``cache_key`` (or ``bytes:{url}``) so repeated
+        member reads don't re-fetch the same archive.
+        """
+        import zipfile
+
+        archive_bytes, _ = await self.fetch_bytes(
+            url,
+            headers=headers,
+            cache_key=cache_key,
+            use_cache=use_cache,
+        )
+        with zipfile.ZipFile(io.BytesIO(archive_bytes)) as zf:
+            try:
+                return zf.read(member_path)
+            except KeyError as exc:
+                raise HttpClientError(f"Member {member_path!r} not found in {url}") from exc

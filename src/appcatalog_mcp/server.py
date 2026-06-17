@@ -10,6 +10,7 @@ from mcp.server.fastmcp import FastMCP
 
 from appcatalog_mcp.adapters import (
     ChocolateyAdapter,
+    EvergreenAdapter,
     SihqAdapter,
     WingetAdapter,
 )
@@ -38,6 +39,7 @@ async def app_lifespan(server: FastMCP) -> AsyncIterator[dict]:
 
     winget = WingetAdapter(http, settings)
     choco = ChocolateyAdapter(http, settings.choco_api)
+    evergreen = EvergreenAdapter(http, settings.evergreen_api)
     sihq = SihqAdapter(http, settings.sihq_url)
 
     try:
@@ -47,6 +49,7 @@ async def app_lifespan(server: FastMCP) -> AsyncIterator[dict]:
             "cache": cache,
             "winget": winget,
             "chocolatey": choco,
+            "evergreen": evergreen,
             "sihq": sihq,
         }
     finally:

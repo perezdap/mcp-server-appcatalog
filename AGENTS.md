@@ -13,7 +13,12 @@ Sources today:
 - **winget** — `microsoft/winget-pkgs` GitHub repo (primary, authoritative) with
   the `winget.run` REST API as a stale-but-unlimited fallback for free-text
   search only.
-- **Chocolatey** — Community Repository OData v2 API (Atom XML).
+- **Chocolatey** — Community Repository OData v2 API (Atom XML) + `.nupkg`
+  install-script parsing (``tools/chocolateyInstall.ps1``) to surface the real
+  per-arch installer URLs + SHA256 hashes that the OData feed hides.
+- **Evergreen** — public REST API at `https://evergreen-api.stealthpuppy.com`.
+  Vendor-direct latest-version + download URL (+ SHA256 when published).
+  Used by ``find_best_source`` for cross-source freshness comparison.
 - **silentinstallhq** — optional delegation to a separately-deployed
   `mcp-server-silentinstallhq` MCP server for silent switches when winget
   manifests omit them.
@@ -57,11 +62,13 @@ src/appcatalog_mcp/
 ├── adapters/
 │   ├── base.py              # PackageAdapter ABC + PackageNotFoundError
 │   ├── winget_adapter.py    # GitHub Contents API primary, winget.run fallback
-│   ├── chocolatey_adapter.py # OData v2 Atom XML adapter
+│   ├── chocolatey_adapter.py # OData v2 Atom XML adapter + .nupkg enrichment
+│   ├── chocolatey_nupkg.py  # tools/chocolateyInstall.ps1 + .nuspec parser
+│   ├── evergreen_adapter.py # Evergreen REST API adapter
 │   └── sihq_adapter.py      # MCP client delegation to silentinstallhq
 ├── models.py                # Normalized Pydantic models (PackageMetadata etc.)
 ├── cache.py                 # SQLite TTL cache
-├── http_client.py           # httpx + cache + rate limiter
+├── http_client.py           # httpx + cache + rate limiter + fetch_bytes/zip_member
 ├── rate_limiter.py          # asyncio pacing
 └── config.py                # env-driven settings (APPCATALOG_*)
 ```
@@ -72,8 +79,9 @@ src/appcatalog_mcp/
 |------|---------|
 | `search_packages` | Search winget and/or chocolatey by keyword |
 | `get_package` | Full metadata for a specific package (latest or version) |
-| `get_installer_metadata` | All installers, hashes, archs, switches, product codes |
+| `get_installer_metadata` | All installers, hashes, archs, switches, product codes. For Chocolatey, downloads + parses the `.nupkg` `tools/chocolateyInstall.ps1` to surface per-arch URLs + SHA256 |
 | `compare_sources` | Side-by-side: winget vs Chocolatey for the same app |
+| `find_best_source` | Tries winget + Chocolatey + Evergreen in parallel, ranks each by SHA256 / product-code / silent-switch presence, returns best |
 | `list_recent` | Recently updated packages |
 | `get_silent_switches` | Silent install switches (winget manifest → SIHQ fallback) |
 | `get_changelog_or_releasenotes` | Release notes URL/text from manifest or OData |
@@ -138,10 +146,81 @@ To add a source (e.g. Scoop, Npackd):
 
 ### silentinstallhq (`adapters/sihq_adapter.py`)
 - Delegates to a separately-deployed `mcp-server-silentinstallhq` MCP server via
-  the MCP Python SDK `streamablehttp_client`. Used only as a fallback by
+  the MCP Python SDK `streamable_http_client`. Used only as a fallback by
   `get_silent_switches` when a winget manifest carries no Silent switch.
 - All failures are caught and surfaced as `None` (graceful degradation). If the
   SIHQ endpoint is unset or unreachable, callers only get manifest switches.
+
+### Evergreen (`adapters/evergreen_adapter.py`)
+- Base URL: `https://evergreen-api.stealthpuppy.com`. The API blocks default
+  User-Agents; our configured UA passes.
+- Routes: `GET /apps` (list of supported app names, ~553 as of 2026-06) and
+  `GET /app/{Name}` (list of installer rows). There is NO free-text search
+  server-side — we fuzzy-match the `/apps` list client-side (cached at the apps
+  level; per-app detail fetched only when matched).
+- ``list_recent`` returns ``[]`` — Evergreen doesn't expose updates-by-date.
+- Dates are DD/MM/YYYY (EU format). Latest-version selection = the Version with
+  the newest ``Date`` (tie-broken on Version string).
+- One ``/app/{Name}`` response can span multiple Version/Channel/Release
+  combinations; we return every installer row of the chosen latest version.
+- The ``Sha256`` field is present when the vendor source exposes one (e.g.
+  GitHub Releases, used by the 7-Zip app); when absent, ``InstallerInfo.sha256``
+  is ``None``.
+- ``_list_apps`` caches the response explicitly in the adapter (not just via
+  ``fetch_json``'s internal caching) so a mocked HTTP client in tests still
+  benefits from the cache layer when called multiple times.
+
+## find_best_source ranking
+
+`tools/catalog._score_package(pkg)` is a scalar ranking of normalized
+`PackageMetadata`. Higher = better for Intune/PSADT packaging:
+
+- +3 if any installers; +1 per installer (cap +5)
+- +3 if any installer has a SHA256 hash; +1 per 2 hashed installers (cap +3)
+- +2 if any installer has a ``silent_switch``
+- +3 if any installer has an MSI ``product_code`` (Intune detection value)
+- +1 if any installer has an ``upgrade_code`` (Intune supersedence)
+- +1 each for ``homepage`` / ``release_notes_url`` / ``license``
+- +2 Evergreen freshness bonus (vendor-direct data)
+- +1 winget tie-break bonus (only applied when installers are present)
+
+Chocolatey/Evergreen ids don't match winget ``Publisher.Package`` ids
+directly. ``_cross_source_id_candidates(package_id)`` generates spelling
+fallbacks tried in order: exact id, dot-stripped lowercase (``googlechrome``),
+last segment lower/title (``7zip`` / ``Chrome``), and last-two-segments
+joined. Casings are kept distinct because Evergreen endpoints are
+**case-sensitive** (``/app/MicrosoftEdge`` ≠ ``/app/microsoftedge``).
+
+## Chocolatey `.nupkg` install-script parsing
+
+The OData feed only returns the ``.nupkg`` download URL — a ZIP that wraps the
+real installer + ``tools/chocolateyInstall.ps1``. That PS1 is the source of
+truth for `silentArgs`, `fileType`, remote `url`/`url64bit` + matching
+`checksum`/`checksum64` (SHA256), and the embedded-binary glob pattern under
+``tools/``. Parsing flow:
+
+1. ``get_installer_detail`` → OData lookup (cached) → take ``content@src`` URL.
+2. ``HttpClient.fetch_zip_member(url, "tools/chocolateyInstall.ps1")`` —
+   downloads the zip in memory, opens with :mod:`zipfile`, reads the named
+   member bytes (no disk writes).
+3. ``chocolatey_nupkg.parse_install_script(ps1_text)`` extracts the
+   ``$packageArgs = @{ … }`` hashtable and the per-arch url/checksum pairs. The
+   hashtable parser is brace-depth-aware so nested ``@{}`` and escaped quotes
+   (`` `" ``) don't break extraction. ``validExitCodes = @(0, 3010)`` (unquoted
+   array literal) is matched via a dedicated regex since the quoted-value
+   matcher can't capture it.
+4. ``_enrich_with_parsed_install_script()`` replaces the placeholder
+   ``.nupkg`` installer stub with per-arch ``InstallerInfo`` entries (URL +
+   SHA256 + installer_type + silent_switch). For embedded-binary packages
+   (e.g. ``7zip.install`` with ``tools/7zip_x64.exe`` inside the zip) the
+   ``.nupkg`` URL stays as the downloadable but still gets filled-in
+   ``installer_type`` / ``silent_switch`` from the script. Parsed fields are
+   preserved in ``raw_data["install_script"]``.
+
+Cache keys: ``choco:nupkg:<id_lower>:<version>`` for the parsed result;
+``choco:nupkg-bytes:<url>`` for the raw .nupkg bytes (latin-1 round-tripped
+through JSON cache). Bytes are cached so repeated member reads don't
+re-download the same archive.
 
 ## Caching
 
@@ -180,14 +259,40 @@ To add a source (e.g. Scoop, Npackd):
 
 ```python
 import urllib.request
+import zipfile, io
+
 def fetch(u, accept='application/atom+xml,application/xml', ua='mcp-server-appcatalog/0.1.0'):
     r = urllib.request.Request(u, headers={'Accept':accept,'User-Agent':ua})
     return urllib.request.urlopen(r, timeout=30).read().decode('utf-8')
 
+# winget-pkgs GitHub Contents API (manifests dir listing + raw manifests)
 open('tests/fixtures/winget_github_dir_Google.Chrome.json','w',encoding='utf-8') \
   .write(fetch('https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/g/Google/Chrome','application/vnd.github+json'))
+
+# winget.run search (stale-2023 data, used only as a search fallback)
+open('tests/fixtures/wingetrun_search_chrome.json','w',encoding='utf-8') \
+  .write(fetch('https://api.winget.run/v2/packages?query=chrome&take=5&splitQuery=true&partialMatch=false','application/json'))
+
+# Chocolatey OData v2 Atom XML feeds
 open('tests/fixtures/choco_search_vlc.xml','w',encoding='utf-8') \
   .write(fetch('https://community.chocolatey.org/api/v2/Search()?searchTerm=%27vlc%27&$filter=IsLatestVersion%20eq%20true&$skip=0&$top=5&includePrerelease=false'))
+open('tests/fixtures/choco_versions_7zip.xml','w',encoding='utf-8') \
+  .write(fetch('https://community.chocolatey.org/api/v2/Packages()?%24filter=tolower(Id)%20eq%20%277zip%27%20and%20IsLatestVersion%20eq%20true&%24top=1'))
+
+# Chocolatey .nupkg install-script fixture (download zip → extract a member)
+url = 'https://community.chocolatey.org/api/v2/package/googlechrome'
+req = urllib.request.Request(url, headers={'User-Agent':'mcp-server-appcatalog/0.1.0'})
+archive_bytes = urllib.request.urlopen(req, timeout=60).read()
+with zipfile.ZipFile(io.BytesIO(archive_bytes)) as zf:
+    open('tests/fixtures/choco_nupkg_googlechrome.chocolateyInstall.ps1','wb').write(zf.read('tools/chocolateyInstall.ps1'))
+
+# Evergreen API (vendor-direct latest version + download URLs)
+open('tests/fixtures/evergreen_apps.json','w',encoding='utf-8') \
+  .write(fetch('https://evergreen-api.stealthpuppy.com/apps','application/json'))
+open('tests/fixtures/evergreen_app_MicrosoftEdge.json','w',encoding='utf-8') \
+  .write(fetch('https://evergreen-api.stealthpuppy.com/app/MicrosoftEdge','application/json'))
+open('tests/fixtures/evergreen_app_7zip.json','w',encoding='utf-8') \
+  .write(fetch('https://evergreen-api.stealthpuppy.com/app/7zip','application/json'))
 ```
 
 ## Packaging-agent integration
@@ -195,7 +300,9 @@ open('tests/fixtures/choco_search_vlc.xml','w',encoding='utf-8') \
 This server is designed to be paired with an Intune/PSADT/winget packaging
 agent. Typical flow:
 
-1. `search_packages("Chrome")` → find the winget id `Google.Chrome`.
+1. `find_best_source("Google.Chrome")` → ranks winget / Chocolatey / Evergreen
+   and returns the best source for packaging (e.g. winget wins on Google Chrome
+   because it carries MSI URLs, SHA256, AND ProductCode).
 2. `get_installer_metadata("Google.Chrome")` → direct MSI URLs, SHA256,
    `ProductCode`, `UpgradeCode`, arch per installer.
 3. `get_silent_switches("Google.Chrome")` → confirm `/quiet /norestart`

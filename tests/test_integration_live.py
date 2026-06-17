@@ -125,6 +125,106 @@ async def test_live_chocolatey_search():
 
 
 @pytest.mark.asyncio
+async def test_live_chocolatey_nupkg_parsing_unwraps_real_installers():
+    """``get_installer_detail`` downloads the .nupkg, parses
+    ``tools/chocolateyInstall.ps1``, and surfaces real per-arch MSI URLs +
+    SHA256 hashes (the OData feed only exposes the .nupkg URL)."""
+    from appcatalog_mcp.adapters import ChocolateyAdapter
+
+    http, settings = _build_live()
+    try:
+        adapter = ChocolateyAdapter(http, settings.choco_api)
+        pkg = await adapter.get_installer_detail("googlechrome")
+        assert pkg.id.lower() == "googlechrome"
+        # The parse should replace the placeholder .nupkg installer with at
+        # least one real per-arch MSI URL.
+        assert pkg.installers
+        real_installers = [
+            i for i in pkg.installers if i.installer_type != "nupkg"
+        ]
+        assert real_installers, "expected parsed installers, not the .nupkg stub"
+        # Google Chrome is distributed as MSI — verify the parser detected it.
+        assert any(i.installer_type == "msi" for i in real_installers)
+        # And the SHA256 on the x86 MSI must match the one winget publishes
+        # (cross-source hash agreement — the strongest correctness signal).
+        x86 = next(i for i in real_installers if i.architecture == "x86")
+        assert x86.sha256
+        assert x86.sha256.startswith("ae9ba8c2")  # the well-known Chrome MSI hash
+        assert x86.silent_switch  # /quiet /norestart …
+        assert pkg.raw_data.get("install_script")
+    finally:
+        await http.close()
+
+
+@pytest.mark.asyncio
+async def test_live_evergreen_get_package():
+    from appcatalog_mcp.adapters import EvergreenAdapter
+
+    http, settings = _build_live()
+    try:
+        adapter = EvergreenAdapter(http, settings.evergreen_api)
+        pkg = await adapter.get_package("MicrosoftEdge")
+        assert pkg.source == "evergreen"
+        assert pkg.version  # latest version, non-empty
+        assert pkg.installers  # per-arch installers
+        archs = {i.architecture for i in pkg.installers}
+        assert "x64" in archs
+        # Microsoft Edge is distributed as MSI from the vendor.
+        assert any(i.installer_type == "msi" for i in pkg.installers)
+    finally:
+        await http.close()
+
+
+@pytest.mark.asyncio
+async def test_live_evergreen_7zip_has_sha256():
+    """7-Zip's GitHub release feed publishes SHA256 — Evergreen surfaces it."""
+    from appcatalog_mcp.adapters import EvergreenAdapter
+
+    http, settings = _build_live()
+    try:
+        adapter = EvergreenAdapter(http, settings.evergreen_api)
+        pkg = await adapter.get_package("7zip")
+        assert pkg.source == "evergreen"
+        assert any(i.sha256 for i in pkg.installers)
+    finally:
+        await http.close()
+
+
+@pytest.mark.asyncio
+async def test_live_find_best_source_ranks_winget_for_7zip():
+    """Cross-source ranking: winget (MSI + ProductCode + SHA) > evergreen > choco """
+    from appcatalog_mcp.adapters import (
+        ChocolateyAdapter,
+        EvergreenAdapter,
+        WingetAdapter,
+    )
+    from appcatalog_mcp.cache import CacheStore
+    from appcatalog_mcp.config import Settings
+    from appcatalog_mcp.http_client import HttpClient
+    from appcatalog_mcp.rate_limiter import RateLimiter
+    from appcatalog_mcp.tools.catalog import _score_package
+
+    settings = Settings(cache_dir=CACHE_DIR, cache_ttl_hours=24, request_delay_seconds=0.5)
+    cache = CacheStore(settings.cache_db_path, settings.cache_ttl_seconds)
+    http = HttpClient(settings, cache, RateLimiter(0.5))
+    try:
+        _winget = WingetAdapter(http, settings)
+        _choco = ChocolateyAdapter(http, settings.choco_api)
+        _evergreen = EvergreenAdapter(http, settings.evergreen_api)
+
+        w = await _winget.get_package("7zip.7zip")
+        c = await _choco.get_installer_detail("7zip")
+        e = await _evergreen.get_package("7zip")
+        w_score, _ = _score_package(w)
+        c_score, _ = _score_package(c)
+        e_score, _ = _score_package(e)
+        # Winget has the richest metadata: MSI URLs, SHA256, ProductCode, UpgradeCode.
+        assert w_score > e_score > c_score
+    finally:
+        await http.close()
+
+
+@pytest.mark.asyncio
 async def test_live_chocolatey_list_recent():
     from appcatalog_mcp.adapters import ChocolateyAdapter
 

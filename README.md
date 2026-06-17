@@ -22,8 +22,9 @@ uv run appcatalog-mcp --transport stdio
 ## Features
 
 - **FastMCP** server using the official [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk).
-- **7 tools**: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`.
+- **8 tools**: `search_packages`, `get_package`, `get_installer_metadata`, `compare_sources`, `find_best_source`, `list_recent`, `get_silent_switches`, `get_changelog_or_releasenotes`.
 - **Source adapters** with a uniform `PackageAdapter` ABC: add a new source by implementing `search` / `get_package` / `list_recent` / `normalize`.
+- **Chocolatey ``.nupkg`` parsing** — downloads the package zip in memory and parses ``tools/chocolateyInstall.ps1`` to surface the real per-arch installer URLs + SHA256 hashes + silent args that the OData feed hides. Cross-source SHA256 agreement (e.g., Chocolatey's googlechrome x86 hash == winget's Google.Chrome x86 hash) is verifiable.
 - **SQLite TTL cache** (default 6h) for both raw API responses and normalized records.
 - **Rate limiting** + identifiable User-Agent + configurable httpx connection limits.
 - **Graceful degradation**: winget.run down → search returns empty (GitHub has no free-text search); Chocolatey down → serve from cache; SIHQ unreachable → `get_silent_switches` returns manifest switches only.
@@ -35,12 +36,17 @@ uv run appcatalog-mcp --transport stdio
 | Source | Backend | Notes |
 |---|---|---|
 | winget | `microsoft/winget-pkgs` GitHub Contents API (primary), `winget.run` REST API (search-only fallback) | Authoritative current manifests. Anonymous GitHub quota is 60 req/hr — set `GITHUB_TOKEN` for 5000/hr. |
-| Chocolatey | Community Repository OData v2 API (Atom XML) | `https://community.chocolatey.org/api/v2/` |
+| Chocolatey | Community Repository OData v2 API + `.nupkg` install-script parse | `https://community.chocolatey.org/api/v2/`. The OData feed returns the .nupkg URL; ``get_installer_metadata`` downloads the zip in memory and parses ``tools/chocolateyInstall.ps1`` to extract the real per-arch URLs / SHA256 / silent args. |
+| Evergreen | `evergreen-api.stealthpuppy.com` REST API | Vendor-direct latest-version + download URL (+ SHA256 when the vendor publishes one). Covers 200+ enterprise apps. Refreshes every 8h. Used for vendor-fresh cross-references. |
 | Silent Install HQ | Delegates to a separately-deployed `mcp-server-silentinstallhq` MCP server | Optional. Used as a silent-switch fallback when winget manifests omit `InstallerSwitches`. |
 
 ### Why GitHub-backed winget (not winget.run as primary)?
 
 Live verification (2026-06) shows the public `winget.run` REST API's package index was last updated in early 2023 — it returns `Google.Chrome v111` as "latest" while the real current version is `149.0.7827.156`. winget.run is therefore only a fallback used for **free-text search** (the GitHub Contents API has no package-name search); actual versions, installers, and hashes always come from the GitHub manifests.
+
+### Why Evergreen alongside winget?
+
+Evergreen queries the **vendor source directly** (Microsoft Edge update API, 7-Zip GitHub releases, …) rather than a manifest repo. For some apps (e.g. Adobe Acrobat, FSLogix) it can have newer versions than winget. It also publishes a SHA256 hash when the vendor exposes one. Use ``find_best_source`` to auto-compare winget / Chocolatey / Evergreen for a given app and pick the best source for packaging.
 
 ## Normalized data model
 
@@ -80,9 +86,10 @@ class InstallerInfo(BaseModel):
 | Tool | Signature | Returns |
 |---|---|---|
 | `search_packages` | `query, sources=["winget","chocolatey"], limit=10` | `SearchResults` (normalized list, latest version per match) |
-| `get_package` | `package_id, source=None, version=None` | `PackageMetadata` (full). `source=None` tries winget then chocolatey. |
-| `get_installer_metadata` | `package_id, source="winget", version=None` | All installer URLs + SHA256 + arch + scope + product/upgrade codes + switches |
+| `get_package` | `package_id, source=None, version=None` | `PackageMetadata` (full). `source=None` tries winget then chocolatey. `source="evergreen"` fetches vendor-direct |
+| `get_installer_metadata` | `package_id, source="winget", version=None` | All installer URLs + SHA256 + arch + scope + product/upgrade codes + switches. For Chocolatey, downloads + parses the `.nupkg` in memory to extract real per-arch MSI URLs/hashes
 | `compare_sources` | `package_id` | Side-by-side winget vs chocolatey |
+| `find_best_source` | `package_id` | Tries winget + Chocolatey + Evergreen in parallel, scores each on SHA/product-code/silent-switch presence, returns the highest-scoring source + per-source ranking. For Chocolatey/Evergreen it also tries id-translation fallbacks (``Google.Chrome`` → ``googlechrome``; ``7zip.7zip`` → ``7zip``) |
 | `list_recent` | `limit=10, source=None` | Recently updated packages across sources |
 | `get_silent_switches` | `package_id, source="winget"` | Silent install/uninstall switches; falls back to SIHQ if absent |
 | `get_changelog_or_releasenotes` | `package_id, source=None` | Release notes URL/text |
@@ -96,6 +103,8 @@ class InstallerInfo(BaseModel):
 - "Compare what winget vs Chocolatey have for VLC player."
 - "Give me all installer metadata (architectures, installer types, silent switches, product codes) for Microsoft Visual Studio Code."
 - "List the top 10 recently updated packages across both winget and Chocolatey."
+- "What's the best source for packaging 7-Zip across winget, Chocolatey, and Evergreen?"
+- "Pull Microsoft Edge from Evergreen — what's the latest version + per-arch URLs?"
 
 ### MCP Python client (stdio)
 
@@ -144,6 +153,7 @@ All settings use the `APPCATALOG_` prefix (`GITHUB_TOKEN` is the one exception).
 | `APPCATALOG_WINGET_API` | `auto` | `auto`, `github`, or `winget.run` |
 | `GITHUB_TOKEN` | _unset_ | Optional. Raises GitHub quota to 5000/hr. |
 | `APPCATALOG_CHOCO_API` | `https://community.chocolatey.org/api/v2/` | Chocolatey OData v2 base URL |
+| `APPCATALOG_EVERGREEN_API` | `https://evergreen-api.stealthpuppy.com` | Evergreen REST API base URL |
 | `APPCATALOG_SIHQ_URL` | `http://127.0.0.1:8000/mcp` | Silent Install HQ MCP endpoint; empty = disabled |
 | `APPCATALOG_REQUEST_DELAY_SECONDS` | `0.5` | Minimum delay between outbound requests |
 | `APPCATALOG_USER_AGENT` | project default | Outbound User-Agent |

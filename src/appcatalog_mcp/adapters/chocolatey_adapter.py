@@ -23,6 +23,7 @@ from typing import Any
 from urllib.parse import quote, urlencode
 
 from appcatalog_mcp.adapters.base import PackageAdapter, PackageNotFoundError
+from appcatalog_mcp.adapters.chocolatey_nupkg import parse_install_script
 from appcatalog_mcp.http_client import HttpClient, HttpClientError
 from appcatalog_mcp.models import (
     DependencyInfo,
@@ -61,6 +62,88 @@ _ENTRY_RE = re.compile(r"<entry\b.*?</entry>", re.DOTALL | re.IGNORECASE)
 def _recover_entries(xml: str) -> str:
     """Concatenate any complete ``<entry>...</entry>`` blocks from a truncated feed."""
     return "".join(_ENTRY_RE.findall(xml))
+
+
+def _enrich_with_parsed_install_script(
+    pkg: PackageMetadata,
+    nupkg_url: str,
+    parsed: dict[str, Any],
+) -> PackageMetadata:
+    """Merge parsed install-script data into a Chocolatey PackageMetadata.
+
+    Replaces the placeholder ``.nupkg`` installer with one real per-arch
+    :class:`InstallerInfo` per parsed ``url``/``url64bit``/… (with checksums
+    when SHA256). For embedded-binary packages (no remote URLs), keeps the
+    ``.nupkg`` URL but fills in ``installer_type``/``silent_switch`` from the
+    script. Preserves the parsed PS1 fields in ``raw_data["install_script"]``.
+    """
+    file_type = (parsed.get("file_type") or "nupkg").lower()
+    silent_args = parsed.get("silent_args")
+    software_name = parsed.get("software_name")
+    valid_exit_codes = parsed.get("valid_exit_codes")
+    embedded_bins = parsed.get("embedded_tools_binaries") or []
+    arch_urls = parsed.get("arch_urls") or {}
+    arch_hashes = parsed.get("arch_hashes") or {}
+    hash_is_sha256 = parsed.get("arch_hash_is_sha256") or {}
+
+    installers: list[InstallerInfo] = []
+    if arch_urls:
+        # Remote-installer package: one InstallerInfo per arch URL.
+        for arch, url in arch_urls.items():
+            sha256 = None
+            raw_hash = arch_hashes.get(arch)
+            is_sha256 = hash_is_sha256.get(arch, True)
+            if raw_hash and is_sha256:
+                sha256 = raw_hash.lower()
+            installers.append(
+                InstallerInfo(
+                    url=url,
+                    sha256=sha256,
+                    installer_type=file_type,
+                    architecture=arch,
+                    scope=None,
+                    product_code=None,
+                    upgrade_code=None,
+                    silent_switch=silent_args,
+                    file_size=None,
+                )
+            )
+    else:
+        # Embedded-binary package (e.g. 7zip.install): keep the .nupkg URL as the
+        # downloadable but fill in the real installer type + silent switches.
+        installers.append(
+            InstallerInfo(
+                url=nupkg_url,
+                sha256=None,
+                installer_type=file_type,
+                architecture="neutral",
+                scope=None,
+                product_code=None,
+                upgrade_code=None,
+                silent_switch=silent_args,
+                file_size=None,
+            )
+        )
+
+    raw_data = dict(pkg.raw_data or {})
+    raw_data["install_script"] = {
+        "file_type": file_type,
+        "silent_args": silent_args,
+        "software_name": software_name,
+        "valid_exit_codes": valid_exit_codes,
+        "embedded_tools_binaries": embedded_bins,
+        "note": (
+            "Parsed from tools/chocolateyInstall.ps1 inside the .nupkg. "
+            "For embedded-binary packages the .nupkg URL points at the zip "
+            "that contains the real installer under tools/."
+        ),
+    }
+    return pkg.model_copy(
+        update={
+            "installers": installers,
+            "raw_data": raw_data,
+        }
+    )
 
 
 class ChocolateyAdapter(PackageAdapter):
@@ -132,7 +215,67 @@ class ChocolateyAdapter(PackageAdapter):
     async def get_installer_detail(
         self, package_id: str, version: str | None = None
     ) -> PackageMetadata:
-        return await self.get_package(package_id, version=version)
+        """Deep dive: download the `.nupkg`, parse `tools/chocolateyInstall.ps1`,
+        and surface the real installer URLs + SHA256 hashes + silent args that
+        the OData feed hides.
+
+        Falls back gracefully to the OData-only record (with the `.nupkg` URL as
+        the installer) if the .nupkg can't be fetched or has no
+        `tools/chocolateyInstall.ps1`.
+        """
+        pkg = await self.get_package(package_id, version=version)
+        # The OData-only record has at most one installer pointing at the
+        # .nupkg. If we can enrich it with parsed install-script data, replace
+        # that stub with the real per-arch installer URLs.
+        nupkg_url = next(
+            (i.url for i in pkg.installers if i.installer_type == "nupkg"),
+            None,
+        )
+        if not nupkg_url:
+            return pkg
+
+        cache_key = self.cache_key(
+            f"nupkg:{package_id.lower()}:{pkg.version}"
+        )
+        cached = self.http.get_cache(cache_key)
+        if cached is not None:
+            parsed: dict[str, Any] | None = cached
+        else:
+            parsed = await self._fetch_and_parse_nupkg(nupkg_url)
+            if parsed is not None:
+                self.http.set_cache(cache_key, parsed)
+
+        if not parsed:
+            return pkg
+
+        enriched = _enrich_with_parsed_install_script(pkg, nupkg_url, parsed)
+        return enriched
+
+    async def _fetch_and_parse_nupkg(
+        self, nupkg_url: str
+    ) -> dict[str, Any] | None:
+        """Fetch the .nupkg over HTTP, unzip ``tools/chocolateyInstall.ps1`` in
+        memory, parse it. Returns ``None`` on any failure or if the member
+        is absent.
+        """
+        try:
+            ps1_bytes = await self.http.fetch_zip_member(
+                nupkg_url,
+                "tools/chocolateyInstall.ps1",
+                cache_key=f"choco:nupkg-bytes:{nupkg_url}",
+            )
+        except HttpClientError as exc:
+            logger.debug("%s: no tools/chocolateyInstall.ps1 (%s)", nupkg_url, exc)
+            return None
+        try:
+            ps1_text = ps1_bytes.decode("utf-8-sig")
+        except UnicodeDecodeError as exc:
+            logger.warning("nupkg PS1 decode failed for %s: %s", nupkg_url, exc)
+            return None
+        parsed = parse_install_script(ps1_text)
+        parsed["_nupkg_url"] = nupkg_url
+        return parsed
+
 
     async def list_recent(self, *, limit: int = 10) -> list[PackageMetadata]:
         limit = max(1, min(limit, 100))

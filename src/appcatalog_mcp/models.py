@@ -7,7 +7,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
-SourceName = Literal["winget", "chocolatey", "silentinstallhq"]
+SourceName = Literal["winget", "chocolatey", "silentinstallhq", "evergreen"]
 
 UNKNOWN = "unknown"
 
@@ -147,3 +147,29 @@ class RecentResult(BaseModel):
     limit: int
     source: str | None
     items: list[PackageMetadata]
+
+
+class CandidateScore(BaseModel):
+    """One source's score in a find_best_source comparison."""
+
+    source: SourceName
+    package: PackageMetadata | None = None
+    score: int = 0
+    reasons: list[str] = Field(default_factory=list)
+    error: str | None = None
+
+
+class FindBestSourceResult(BaseModel):
+    """Recommendation of the best single source for packaging a given app.
+
+    Ranking rewards the presence of installer URLs with SHA256 hashes, silent
+    switches, MSI product/upgrade codes (valuable for Intune detection),
+    release notes, and (slightly) Evergreen's vendor-direct freshness.
+    """
+
+    package_id: str
+    best_source: SourceName | None = None
+    best_package: PackageMetadata | None = None
+    best_score: int = 0
+    candidates: list[CandidateScore] = Field(default_factory=list)
+    notes: list[str] = Field(default_factory=list)

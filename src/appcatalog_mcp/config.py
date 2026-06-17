@@ -34,6 +34,10 @@ class Settings(BaseSettings):
         description='Winget backend: "auto" (GitHub then winget.run), "github", "winget.run"',
     )
     choco_api: str = Field(default="https://community.chocolatey.org/api/v2/")
+    evergreen_api: str = Field(
+        default="https://evergreen-api.stealthpuppy.com",
+        description="Evergreen REST API base URL",
+    )
     sihq_url: str = Field(
         default="http://127.0.0.1:8000/mcp",
         description="Silent Install HQ MCP server streamable-http endpoint (optional)",
