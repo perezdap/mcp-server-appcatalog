@@ -8,18 +8,18 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    # Require manual approval before merging dependency update PRs.
+    # Prefix Dependabot commit messages to match repo conventions.
     commit-message:
       prefix: "chore"
       prefix-development: "chore"
-    # Keep the lockfile current without silently bumping to a new major
-    # version of the MCP SDK, which is currently undergoing 1.x -> 2.x.
+    # Group minor/patch updates into single PRs. Group names flow into
+    # branch names and PR titles, so keep them hyphenated.
     groups:
-      - name: "python production dependencies"
+      python-production:
         update-types:
           - "minor"
           - "patch"
-      - name: "python dev dependencies"
+      python-dev:
         dependency-type: "development"
         update-types:
           - "minor"
