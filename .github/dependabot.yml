@@ -1,0 +1,43 @@
+# Dependabot version updates for this repository.
+# Dependency alerts (vulnerable pinned versions) are separate and enabled at
+# Settings -> Code security and analysis; they do not require this file.
+version: 2
+updates:
+  # Python dependencies managed by uv (updates uv.lock via pyproject.toml).
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Require manual approval before merging dependency update PRs.
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+    # Keep the lockfile current without silently bumping to a new major
+    # version of the MCP SDK, which is currently undergoing 1.x -> 2.x.
+    groups:
+      - name: "python production dependencies"
+        update-types:
+          - "minor"
+          - "patch"
+      - name: "python dev dependencies"
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    # Don't open PRs for new majors (e.g. mcp 2.x); review those manually.
+    ignore:
+      - dependency-name: "mcp"
+        update-types:
+          - "version-update:semver-major"
+    labels:
+      - "dependencies"
+
+  # Base image of Dockerfile (currently python:3.12-slim).
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore"
+    labels:
+      - "dependencies"
